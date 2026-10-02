@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Primary Meta Tags -->
+    <title>Honey in Spoon | Pure & Infused Kashmiri Honey</title>
+    <meta name="title" content="Honey in Spoon | Pure & Infused Kashmiri Honey">
+    <meta name="description" content="Premium Honey in Spoon from Kashmir. Convenient, pure, and infused with Saffron, Kehwa, and Pan. Mess-free natural sweetener on the go. Order your box today.">
+    <meta name="keywords" content="Honey in Spoon, Infused Honey, Kashmiri Saffron Honey, Kehwa Honey, Pan Honey, Natural Sweetener, Srinagar, Mess-free Honey">
+    <meta name="author" content="Honey in Spoon Inc.">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Canonical Link (Update href to your actual live domain) -->
+    <link rel="canonical" href="https://www.honeyinspoon.com/">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.honeyinspoon.com/">
+    <meta property="og:title" content="Honey in Spoon | Pure & Infused Kashmiri Honey">
+    <meta property="og:description" content="Experience nature's purest golden honey, perfectly pre-portioned in a spoon. Infused with Kashmiri Saffron, Kehwa, and Pan.">
+    <!-- Note: Create a 1200x630 image named social-preview.jpg for best results -->
+    <meta property="og:image" content="https://www.honeyinspoon.com/social-preview.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://www.honeyinspoon.com/">
+    <meta property="twitter:title" content="Honey in Spoon | Pure & Infused Kashmiri Honey">
+    <meta property="twitter:description" content="Premium Honey in a Spoon. Sourced from Kashmir, infused with Saffron, Kehwa, and Pan. Order your box today.">
+    <meta property="twitter:image" content="https://www.honeyinspoon.com/social-preview.jpg">
+
+    <!-- Preconnect to external domains to speed up loading (Important for SEO) -->
+    <link rel="preconnect" href="https://firestore.googleapis.com">
+    <link rel="preconnect" href="https://api.open-meteo.com">
+    
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Local Business Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Honey in Spoon",
+      "image": "https://www.honeyinspoon.com/logo.png",
+      "description": "Premium Honey in Spoon - Convenient, pure, and infused with Saffron, Kehwa, and Pan sourced from Kashmir.",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Srinagar",
+        "addressLocality": "Srinagar",
+        "addressRegion": "Jammu and Kashmir",
+        "postalCode": "190008",
+        "addressCountry": "IN"
+      },
+      "email": "hunyinc@gmail.com",
+      "url": "https://www.honeyinspoon.com/"
+    }
+    </script>
+</head>
+<body>
+
+    <div id="click-ripple-container"></div>
+
+    <div id="launch-screen">
+        <div class="brand-container">
+            <img src="logo.png" alt="Honey in Spoon Brand Logo" class="launch-logo">
+            <div class="loader" id="loader">
+                <div class="liquid-drop"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="menu-overlay">
+        <nav class="overlay-links">
+            <a href="index.html" class="ripple-link">Home</a>
+            <a href="about.html" class="ripple-link">About Us</a>
+            <a href="products.html" class="ripple-link">Products</a>
+            <a href="contact.html" class="ripple-link">Contact Us</a>
+        </nav>
+    </div>
+
+    <div id="main-site" class="hidden">
+
+        <header class="liquid-pill-wrapper">
+            <nav class="liquid-pill">
+                <img src="logo.png" alt="Honey in Spoon Official Logo" class="header-logo">
+                
+                <div class="desktop-nav-links">
+                    <a href="index.html" class="ripple-link">Home</a>
+                    <a href="about.html" class="ripple-link">About Us</a>
+                    <a href="products.html" class="ripple-link">Products</a>
+                    <a href="contact.html" class="ripple-link">Contact Us</a>
+                </div>
+
+                <div class="header-controls">
+                    <div class="contact-slider" id="contactSlider">
+                        <div class="contact-info">
+                            <span>hunyinc@gmail.com</span>
+                        </div>
+                        <button class="pill-contact" id="contactBtn">Contact</button>
+                    </div>
+                    
+                    <div class="hamburger" id="hamburger">
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <main>
+            <div class="pill-ticker-wrapper">
+                <div class="news-ticker-banner">
+                    <div class="seamless-marquee-container" style="padding: 0;">
+                        <div class="ticker-track">
+                            <div class="ticker-group" aria-live="polite">
+                                <span>LATEST UPDATE: Try our new Saffron Infused Honey Spoon!</span>
+                                <span class="dot">•</span>
+                                <span>ANNOUNCEMENT: Now shipping to 400+ locations nationwide.</span>
+                                <span class="dot">•</span>
+                                <span>NEWS: Awarded Top Natural Sweetener Brand 2026.</span>
+                                <span class="dot">•</span>
+                            </div>
+                            <div class="ticker-group" aria-hidden="true">
+                                <span>LATEST UPDATE: Try our new Saffron Infused Honey Spoon!</span>
+                                <span class="dot">•</span>
+                                <span>ANNOUNCEMENT: Now shipping to 400+ locations nationwide.</span>
+                                <span class="dot">•</span>
+                                <span>NEWS: Awarded Top Natural Sweetener Brand 2026.</span>
+                                <span class="dot">•</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-stack-engine">
+                <div class="hero-fixed-layer">
+                    <picture>
+                        <source media="(max-width: 768px)" srcset="honey-in-spoon-huny-kashmir.png">
+                        <img src="honey-in-spoon-huny.png" alt="Golden pure honey dripping into a spoon - Honey in Spoon Hero Image" id="landscape-hero-img" class="landscape-hero-img">
+                    </picture>
+                </div>
+                <picture class="invisible-spacer" aria-hidden="true">
+                    <source media="(max-width: 768px)" srcset="honey-in-spoon-huny-kashmir.png">
+                    <img src="honey-in-spoon-huny.png" class="landscape-hero-img" alt="">
+                </picture>
+            </div>
+
+            <div class="solid-white-stack">
+                
+                <section id="about" class="content-section">
+                    <div class="about-container">
+                        <div class="about-clean-wrapper mobile-stack-img-first">
+                            <div class="about-text-content stack-text">
+                                <h1 class="smooth-glare-yellow" style="font-size: 3.5rem; margin-top: 0; margin-bottom: 20px; letter-spacing: -1.5px;">Sweetness Redefined.</h1>
+                                <p>Nature's purest golden honey, conveniently pre-portioned in a spoon. Whether you're sweetening your morning tea or enjoying a healthy treat on the go, our infused honey spoons bring flavor, health, and simplicity right to your cup.</p>
+                                
+                                <a href="about.html" style="text-decoration: none;" aria-label="Discover our story about pure Kashmiri honey">
+                                    <button class="cssbuttons-io-button ripple-link">
+                                      Discover Our Story
+                                      <div class="icon">
+                                        <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                          <path d="M0 0h24v24H0z" fill="none"></path>
+                                          <path d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z" fill="currentColor"></path>
+                                        </svg>
+                                      </div>
+                                    </button>
+                                </a>
+                            </div>
+                            
+                            <div class="about-image-container stack-img">
+                                <img src="about-huny-in-spoon.png" alt="Pure Kashmiri honey pouring process into an aesthetic spoon" id="scroll-image-right" class="scrub-image right-scrub" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1621533263595-df703666f7d0?q=80&w=800&auto=format&fit=crop'">
+                            </div>
+                        </div>
+
+                        <div class="weather-widget-container">
+                            <div class="weather-minimal">
+                                <div class="weather-row">
+                                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#4ecb9e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 14.76V3.5a2.5 2.5 0 0 0-5 0v11.26a4.5 4.5 0 1 0 5 0z"></path></svg>
+                                    <span class="w-temp font-light" id="live-temp">--°C</span>
+                                    <span class="w-divider"></span>
+                                    <div id="live-icon" style="display:flex; align-items:center;">
+                                        <svg width="17" height="17" viewBox="0 0 24 24" fill="#facc39" stroke="#facc39" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle></svg>
+                                    </div>
+                                    <span class="w-cond font-light" id="live-cond">Loading...</span>
+                                </div>
+                                <div class="weather-sub">CURRENT KASHMIR SOURCING WEATHER</div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="bento-section bg-white">
+                    <div class="bento-container">
+                        <div class="bento-header">
+                            <h3 class="section-sub text-yellow">— WHY CHOOSE US?</h3>
+                            <h2 class="bento-title smooth-glare-purple">Pure, Convenient & <br>Perfectly Portioned</h2>
+                            <p class="bento-desc font-light">Forget sticky jars and messy pours. Our smart spoons are designed to deliver exact sweetness, infused with nature's finest ingredients.</p>
+                        </div>
+                        
+                        <div class="bento-grid">
+                            <div class="bento-card electrify-hover">
+                                <div class="bento-icon">
+                                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--honey-yellow)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                                </div>
+                                <h4>100% Pure & Natural</h4>
+                                <p class="font-light">Sourced responsibly in Kashmir, containing zero artificial sugars or preservatives.</p>
+                            </div>
+                            <div class="bento-card electrify-hover">
+                                <div class="bento-icon">
+                                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--honey-purple)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+                                </div>
+                                <h4>Mess-Free Usage</h4>
+                                <p class="font-light">Just open, stir into your hot beverage, and watch it dissolve flawlessly.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="futuristic-section bg-white">
+                    <h3 class="section-sub text-yellow text-center">— OUR INFUSION SIGNATURES</h3>
+                    <h2 class="section-title text-center smooth-glare-purple" style="margin-bottom: 15px;">Flavors That Inspire</h2>
+                    <p class="text-center font-light" style="color: var(--text-secondary); max-width: 600px; margin: 0 auto 40px; font-size: 1.05rem;">We blend our rich honey with authentic, traditional Kashmiri ingredients to create spoons that do more than just sweeten.</p>
+
+                    <div class="electric-pills-container">
+                        <div class="electric-wrapper pill-hover">
+                            <div class="electric-content">
+                                <h4>Saffron Infused</h4>
+                                <p>For a royal touch</p>
+                            </div>
+                        </div>
+                        <div class="electric-wrapper pill-hover">
+                            <div class="electric-content">
+                                <h4>Kehwa Infused</h4>
+                                <p>For authentic warmth</p>
+                            </div>
+                        </div>
+                        <div class="electric-wrapper pill-hover">
+                            <div class="electric-content">
+                                <h4>Pan Infused</h4>
+                                <p>For a refreshing finish</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="photo-slider-section bg-white">
+                    <div class="seamless-marquee-container">
+                        <div class="marquee-track photo-track">
+                            <div class="marquee-group photo-group">
+                                <div class="frosted-photo-card"><img src="kashmiri-saffron-tea.jpg" alt="Traditional Kashmiri Saffron Tea sweetened with Honey in Spoon" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1587049352847-4d4b126a31fc?w=400'"></div>
+                                <div class="frosted-photo-card"><img src="kashmiri-kehwa.jpg" alt="Authentic Kashmiri Kehwa beverage preparation" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1576092768241-dec231879fc3?w=400'"></div>
+                                <div class="frosted-photo-card"><img src="honey-in-kashmir.jpg" alt="Golden honey pouring in Kashmir" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1621533263595-df703666f7d0?w=400'"></div>
+                                <div class="frosted-photo-card"><img src="saffron-in-kashmir.jpg" alt="Fresh green Pan leaves and spices" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=400'"></div>
+                                <div class="frosted-photo-card"><img src="kashmiri-honey.jpg" alt="Hot cup of tea sweetened with natural honey" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1597481499750-3e6b22637e12?w=400'"></div>
+                                <div class="frosted-photo-card"><img src="honey-in-spoon.jpg" alt="Aesthetic transparent spoon holding pure honey" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1557310717-d6bea9f36682?w=400'"></div>
+                            </div>
+                            <div class="marquee-group photo-group" aria-hidden="true">
+                                <div class="frosted-photo-card"><img src="kashmiri-saffron-tea.jpg" alt="Traditional Kashmiri Saffron Tea sweetened with Honey in Spoon" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1587049352847-4d4b126a31fc?w=400'"></div>
+                                <div class="frosted-photo-card"><img src="kashmiri-kehwa.jpg" alt="Authentic Kashmiri Kehwa beverage preparation" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1576092768241-dec231879fc3?w=400'"></div>
+                                <div class="frosted-photo-card"><img src="honey-in-kashmir.jpg" alt="Golden honey pouring in Kashmir" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1621533263595-df703666f7d0?w=400'"></div>
+                                <div class="frosted-photo-card"><img src="saffron-in-kashmir.jpg" alt="Fresh green Pan leaves and spices" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=400'"></div>
+                                <div class="frosted-photo-card"><img src="kashmiri-honey.jpg" alt="Hot cup of tea sweetened with natural honey" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1597481499750-3e6b22637e12?w=400'"></div>
+                                <div class="frosted-photo-card"><img src="honey-in-spoon.jpg" alt="Aesthetic transparent spoon holding pure honey" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1557310717-d6bea9f36682?w=400'"></div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="stats" class="stats-section bg-white">
+                    <div class="stats-container">
+                        <div class="stat-box">
+                            <div class="stat-value">
+                                <h2 class="counter" data-target="2531">0</h2><span>+</span>
+                            </div>
+                            <p>Happy Customers</p>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-value">
+                                <h2 class="counter" data-target="400">0</h2><span>+</span>
+                            </div>
+                            <p>Shipping Locations</p>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-value">
+                                <h2 class="counter" data-target="24389">0</h2><span>+</span>
+                            </div>
+                            <p>Spoons Enjoyed</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="testimonials" class="testimonials-section bg-white">
+                    <h2 class="section-title smooth-glare-dark">What <span class="smooth-glare-yellow">Our</span> Customers Say</h2>
+                    <div class="seamless-marquee-container padded-marquee">
+                        <div class="marquee-track reviews-track">
+                            <div class="marquee-group">
+                                <div class="card glow-card"><div class="card-name">Aisha Bhat<span class="designation">Tea Enthusiast</span></div><div class="quote">“The Saffron infused spoon completely changed my morning tea routine. So pure and easy to use.”</div></div>
+                                <div class="card glow-card"><div class="card-name">Zoya Khan<span class="designation">Food Blogger</span></div><div class="quote">“I keep a box in my office. Mess-free honey that actually tastes authentic and organic!”</div></div>
+                                <div class="card glow-card"><div class="card-name">Samir<span class="designation">Cafe Owner</span></div><div class="quote">“We serve the Kehwa spoons with hot water at our cafe. Customers absolutely love the interactive experience.”</div></div>
+                                <div class="card glow-card"><div class="card-name">Faizan Ali<span class="designation">Student</span></div><div class="quote">“Perfect sweetness for my late-night study sessions. The Kehwa one is my absolute favorite.”</div></div>
+                                <div class="card glow-card"><div class="card-name">Mehvish<span class="designation">Home Chef</span></div><div class="quote">“The quality of Saffron is visible. It dissolves quickly and leaves a beautiful aroma.”</div></div>
+                                <div class="card glow-card"><div class="card-name">Tariq Dar<span class="designation">Traveler</span></div><div class="quote">“I carry these everywhere. So convenient for trips when I want my honey without the sticky mess.”</div></div>
+                                <div class="card glow-card"><div class="card-name">Rida H.<span class="designation">Fitness Coach</span></div><div class="quote">“Great natural pre-workout sugar boost. The Pan infused one is incredibly refreshing.”</div></div>
+                                <div class="card glow-card"><div class="card-name">Aaqib<span class="designation">Photographer</span></div><div class="quote">“Such an elegant packaging and the taste backs it up. Beautiful product inside and out.”</div></div>
+                                <div class="card glow-card"><div class="card-name">Ishfaq<span class="designation">Business Owner</span></div><div class="quote">“Gifted these to my clients during the holidays. They were blown away by the concept!”</div></div>
+                                <div class="card glow-card"><div class="card-name">Uzma<span class="designation">Teacher</span></div><div class="quote">“A quick healthy sweetener between classes. It soothes my throat instantly. Highly recommend!”</div></div>
+                            </div>
+                            <div class="marquee-group" aria-hidden="true">
+                                <div class="card glow-card"><div class="card-name">Aisha Bhat<span class="designation">Tea Enthusiast</span></div><div class="quote">“The Saffron infused spoon completely changed my morning tea routine. So pure and easy to use.”</div></div>
+                                <div class="card glow-card"><div class="card-name">Zoya Khan<span class="designation">Food Blogger</span></div><div class="quote">“I keep a box in my office. Mess-free honey that actually tastes authentic and organic!”</div></div>
+                                <div class="card glow-card"><div class="card-name">Samir<span class="designation">Cafe Owner</span></div><div class="quote">“We serve the Kehwa spoons with hot water at our cafe. Customers absolutely love the interactive experience.”</div></div>
+                                <div class="card glow-card"><div class="card-name">Faizan Ali<span class="designation">Student</span></div><div class="quote">“Perfect sweetness for my late-night study sessions. The Kehwa one is my absolute favorite.”</div></div>
+                                <div class="card glow-card"><div class="card-name">Mehvish<span class="designation">Home Chef</span></div><div class="quote">“The quality of Saffron is visible. It dissolves quickly and leaves a beautiful aroma.”</div></div>
+                                <div class="card glow-card"><div class="card-name">Tariq Dar<span class="designation">Traveler</span></div><div class="quote">“I carry these everywhere. So convenient for trips when I want my honey without the sticky mess.”</div></div>
+                                <div class="card glow-card"><div class="card-name">Rida H.<span class="designation">Fitness Coach</span></div><div class="quote">“Great natural pre-workout sugar boost. The Pan infused one is incredibly refreshing.”</div></div>
+                                <div class="card glow-card"><div class="card-name">Aaqib<span class="designation">Photographer</span></div><div class="quote">“Such an elegant packaging and the taste backs it up. Beautiful product inside and out.”</div></div>
+                                <div class="card glow-card"><div class="card-name">Ishfaq<span class="designation">Business Owner</span></div><div class="quote">“Gifted these to my clients during the holidays. They were blown away by the concept!”</div></div>
+                                <div class="card glow-card"><div class="card-name">Uzma<span class="designation">Teacher</span></div><div class="quote">“A quick healthy sweetener between classes. It soothes my throat instantly. Highly recommend!”</div></div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="products" class="products-section bg-white" style="padding-bottom: 20px;">
+                    <div class="card_scroller">
+                        <div class="loader_scroller">
+                            <p style="color: var(--honey-purple);">Our</p>
+                            
+                            <div class="words">
+                                <span class="word">Products</span>
+                                <span class="word">Delicacy</span>
+                                <span class="word">Spoons</span>
+                                <span class="word">Sweetness</span>
+                                <span class="word">Saffron</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="product-showcase mobile-stack-img-first">
+                        <div class="product-list stack-text">
+                            
+                            <div class="product-item-new">
+                                <span class="product-number">01</span>
+                                <h3 class="product-title">Saffron Infused Honey</h3>
+                                <div class="product-img-desc">
+                                    <p>A luxurious blend of pure honey and premium saffron strands. Perfect for boosting immunity and adding a rich, aromatic sweetness to your daily routine.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="product-item-new">
+                                <span class="product-number">02</span>
+                                <h3 class="product-title">Kehwa Infused Honey</h3>
+                                <div class="product-img-desc">
+                                    <p>Experience the traditional warmth of Kashmiri Kehwa without the prep. Just stir this spoon into hot water and enjoy a perfectly spiced, honey-sweetened cup instantly.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="product-item-new">
+                                <span class="product-number">03</span>
+                                <h3 class="product-title">Pan Infused Honey</h3>
+                                <div class="product-img-desc">
+                                    <p>A delightful, refreshing fusion of sweet honey and authentic Pan notes. An excellent after-meal treat that serves as a natural mouth freshener and digestive aid.</p>
+                                </div>
+                            </div>
+
+                        </div>
+                        
+                        <div class="product-image-large stack-img">
+                            <img src="honey-spoon-product.jpg" alt="Honey in Spoon variety box displaying Saffron, Kehwa and Pan flavors" id="product-img-punch" loading="lazy">
+                        </div>
+                    </div>
+                </section>
+
+                <section id="purchase" class="products-section bg-white" style="padding-top: 40px; padding-bottom: 80px;">
+                    <h3 class="section-sub text-yellow text-center">— READY TO ORDER</h3>
+                    <h2 class="section-title text-center smooth-glare-dark" style="margin-bottom: 40px;">Secure Your Box Today</h2>
+                    <div id="dynamic-products-container" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; max-width: 1200px; margin: 0 auto;">
+                        <p style="text-align: center; width: 100%; color: var(--text-secondary);">Syncing live store inventory...</p>
+                    </div>
+                </section>
+
+            </div> 
+        </main>
+
+        <footer class="apple-footer">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <img src="logo.png" alt="Honey in Spoon Corporate Logo" class="footer-logo" loading="lazy">
+                    <p>Pure, Convenient & Perfectly Portioned for your daily delight.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Info</h4>
+                    <p>Honey in Spoon Inc.</p>
+                    <p>Srinagar, Jammu and Kashmir, 190008</p>
+                    <p class="highlight-text">hunyinc@gmail.com</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <a href="about.html" class="ripple-link">About Us</a>
+                    <a href="products.html" class="ripple-link">Products</a>
+                    <a href="contact.html" class="ripple-link">Contact Us</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Social</h4>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/huny.spoon" aria-label="Follow us on Instagram" target="_blank" rel="noopener noreferrer">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                        </a>
+                        <a href="https://www.facebook.com/profile.php?id=61594509522063&rdid=SZcBOONl0XxB41A4&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1HYG5X1o2E%2F" aria-label="Follow us on Facebook" target="_blank" rel="noopener noreferrer">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.469h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.469h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026, Honey in Spoon. All Rights Reserved.</p>
+            </div>
+        </footer>
+    </div>
+
+    <script type="module" src="script.js"></script>
+</body>
+</html>

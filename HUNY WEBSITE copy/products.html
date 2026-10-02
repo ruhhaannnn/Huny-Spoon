@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Spoons | Honey in Spoon</title>
+    
+    <!-- Core SEO Meta Tags -->
+    <meta name="description" content="Explore our premium range of infused honey spoons. 100% pure, perfectly portioned, and infused with traditional flavors like Saffron, Kehwa, and Pan.">
+    <meta name="keywords" content="Honey in Spoon, premium honey spoons, infused honey, Saffron honey, Kehwa honey, buy honey online, Huny Inc products">
+    <meta name="author" content="Honey in Spoon Inc.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.yourwebsite.com/products.html"> <!-- Replace with your actual domain -->
+
+    <!-- Open Graph / Facebook SEO -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.yourwebsite.com/products.html">
+    <meta property="og:title" content="Our Spoons | Honey in Spoon">
+    <meta property="og:description" content="Explore our premium range of infused honey spoons. 100% pure, perfectly portioned, and infused with traditional flavors like Saffron, Kehwa, and Pan.">
+    <meta property="og:image" content="logo.png">
+
+    <!-- Twitter SEO -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Our Spoons | Honey in Spoon">
+    <meta name="twitter:description" content="Explore our premium range of infused honey spoons. 100% pure, perfectly portioned, and infused with traditional flavors like Saffron, Kehwa, and Pan.">
+    <meta name="twitter:image" content="logo.png">
+
+    <link rel="icon" type="image/png" href="favicon.png">
+    
+    <style>
+        :root {
+            /* Honey in Spoon Color Scheme */
+            --honey-yellow: #FFB300;
+            --honey-purple: #6A1B9A;
+            --bg-white: #ffffff;
+            --text-main: #1d1d1f;
+            --text-secondary: #515154;
+            --glass-bg: rgba(255, 255, 255, 0.45);
+            --glass-border: rgba(0, 0, 0, 0.05);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, sans-serif; }
+        
+        body, html { width: 100%; height: 100%; background-color: var(--honey-yellow); color: var(--text-main); overflow-x: hidden; scroll-behavior: smooth; }
+
+        .text-purple { color: var(--honey-purple); }
+        .text-yellow { color: var(--honey-yellow); }
+        .text-white { color: #ffffff !important; }
+        .text-center { text-align: center; }
+        .bg-white { background-color: var(--bg-white) !important; }
+
+        /* Globals */
+        #click-ripple-container { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; pointer-events: none; z-index: 99999; overflow: hidden; }
+        .click-ripple-circle { position: absolute; border-radius: 50%; background: #ffffff; width: 10px; height: 10px; pointer-events: none; transform: translate(-50%, -50%) scale(0); animation: linearRipple 0.8s cubic-bezier(0.1, 0.8, 0.3, 1) forwards; will-change: transform, opacity; }
+        @keyframes linearRipple { 0% { transform: translate(-50%, -50%) scale(0); opacity: 0.9; } 100% { transform: translate(-50%, -50%) scale(65); opacity: 0; } }
+
+        /* Nav Overlay */
+        #menu-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100vh; background: rgba(255, 255, 255, 0.96); backdrop-filter: blur(30px); display: flex; justify-content: center; align-items: center; pointer-events: none; z-index: 900; clip-path: circle(0% at calc(100% - 60px) 45px); transition: clip-path 0.6s cubic-bezier(0.77, 0, 0.175, 1); will-change: clip-path; }
+        #menu-overlay.active { clip-path: circle(150% at calc(100% - 60px) 45px); pointer-events: all; }
+        .overlay-links { display: flex; flex-direction: column; align-items: center; gap: 20px; width: 100%; max-width: 400px; }
+        .overlay-links a { display: flex; align-items: center; justify-content: center; width: 280px; height: 56px; border-radius: 50px; color: var(--text-main); text-decoration: none; font-size: 1.25rem; font-weight: 600; letter-spacing: -0.5px; position: relative; background: #ffffff; border: 1px solid rgba(0, 0, 0, 0.08); overflow: hidden; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05); transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); z-index: 1; transform: translateZ(0); }
+        .overlay-links a::before { content: ''; position: absolute; top: 50%; left: 50%; width: 500px; height: 500px; background: conic-gradient(from 0deg, transparent 60%, var(--honey-purple) 75%, var(--honey-yellow) 100%); transform: translate(-50%, -50%) rotate(0deg); animation: spinElectric 3.5s linear infinite; z-index: -2; opacity: 0.3; transition: opacity 0.4s; will-change: transform; }
+        .overlay-links a::after { content: ''; position: absolute; inset: 2px; background: #ffffff; border-radius: 50px; z-index: -1; transition: background 0.3s; }
+        .overlay-links a:hover { transform: scale(1.05) translateY(-2px); color: var(--honey-yellow); box-shadow: 0 0 30px rgba(255, 179, 0, 0.15), 0 0 15px rgba(106, 27, 154, 0.1); }
+        .overlay-links a:hover::before { opacity: 1; }
+        @keyframes spinElectric { 0% { transform: translate(-50%, -50%) rotate(0deg); } 100% { transform: translate(-50%, -50%) rotate(360deg); } }
+
+        /* Header UI */
+        .liquid-pill-wrapper { position: fixed; top: 20px; left: 0; width: 100%; display: flex; justify-content: center; z-index: 1000; pointer-events: none; }
+        .liquid-pill { display: flex; align-items: center; justify-content: space-between; background: var(--glass-bg); backdrop-filter: blur(40px) saturate(250%); border: 1px solid var(--glass-border); box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.9), 0 10px 30px rgba(0,0,0,0.08); border-radius: 100px; padding: 8px 16px 8px 15px; width: 90%; max-width: 1200px; transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); pointer-events: all; will-change: padding, border-radius, max-width, background; }
+        .liquid-pill.scrolled { padding: 10px 15px 10px 20px; background: rgba(255, 255, 255, 0.96); max-width: 100%; border-radius: 0px; border: none; border-bottom: 1px solid rgba(0, 0, 0, 0.05); box-shadow: 0 5px 15px rgba(0,0,0,0.03); }
+
+        /* INCREASED LOGO SIZE BY ~20% */
+        .header-logo { height: 51px; object-fit: contain; margin-left: 20px; }
+        .desktop-nav-links { display: flex; gap: 32px; align-items: center; justify-content: center; flex: 1; padding: 0 40px; }
+        .desktop-nav-links a { color: var(--text-main); text-decoration: none; font-size: 0.95rem; font-weight: 600; transition: color 0.3s; white-space: nowrap; }
+        .desktop-nav-links a:hover { color: var(--honey-purple); }
+
+        .header-controls { display: flex; align-items: center; gap: 20px; flex-shrink: 0; margin-right: 5px; }
+        .contact-slider { display: flex; align-items: center; background: white; border-radius: 50px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); padding: 4px; overflow: hidden; transform: translateZ(0); }
+        .contact-info { max-width: 0; opacity: 0; white-space: nowrap; overflow: hidden; transition: max-width 0.4s ease, opacity 0.3s ease, padding 0.4s ease; display: flex; align-items: center; font-size: 0.9rem; font-weight: 600; color: var(--text-main); will-change: max-width, opacity; }
+        .contact-info.expanded { max-width: 300px; opacity: 1; padding: 0 15px 0 10px; pointer-events: all; }
+        .contact-info .divider { color: #d2d2d7; margin: 0 10px; font-weight: 300; }
+        .pill-contact { background: var(--honey-purple); color: white; border: none; padding: 10px 24px; border-radius: 50px; font-weight: 600; cursor: pointer; transition: background 0.3s ease; position: relative; z-index: 5; }
+        .pill-contact:hover { background: var(--honey-yellow); color: #000; }
+
+        .hamburger { display: flex; flex-direction: column; gap: 6px; cursor: pointer; z-index: 2000; padding: 10px; }
+        .hamburger span { width: 28px; height: 2px; background: var(--text-main); border-radius: 2px; transition: transform 0.4s ease; }
+        .hamburger.active span:nth-child(1) { transform: translateY(8px) rotate(45deg); background: var(--honey-yellow); }
+        .hamburger.active span:nth-child(2) { transform: translateY(-8px) rotate(-45deg); background: var(--honey-yellow); }
+
+        /* Typography */
+        .section-sub { color: var(--honey-yellow); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 20px; font-size: 0.9rem; font-weight: 700; display: block; text-align: center; }
+        .section-title { font-size: 2.5rem; font-weight: 800; margin-bottom: 20px; letter-spacing: -1px; position: relative; z-index: 5; text-align: center; }
+
+        @keyframes shineText { 0% { background-position: 200% center; } 100% { background-position: -200% center; } }
+        .glare-purple { background: linear-gradient(to right, var(--honey-purple) 0%, #ce93d8 10%, var(--honey-purple) 20%); background-size: 200% auto; -webkit-background-clip: text; -webkit-text-fill-color: transparent !important; animation: shineText 4s linear infinite forwards; }
+        .smooth-glare-dark { background: linear-gradient(to right, var(--text-main) 0%, var(--text-main) 40%, #a0a0a0 50%, var(--text-main) 60%, var(--text-main) 100%); background-size: 200% auto; -webkit-background-clip: text; -webkit-text-fill-color: transparent !important; animation: shineText 4s linear infinite; }
+        .glare-white { background: linear-gradient(to right, #ffffff 0%, #ffffff 40%, #ffe082 50%, #ffffff 60%, #ffffff 100%); background-size: 200% auto; -webkit-background-clip: text; -webkit-text-fill-color: transparent !important; animation: shineText 4s linear infinite forwards; text-shadow: none !important; }
+
+        /* =========================================
+           1. FIXED PARALLAX HERO BACKGROUND
+           ========================================= */
+        .fixed-hero-bg {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100vh;
+            background: linear-gradient(135deg, var(--honey-yellow) 0%, #e6a200 100%);
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 140px 5% 0;
+            text-align: center;
+        }
+        .fixed-hero-bg h1 { font-size: clamp(3rem, 5vw, 4.5rem); font-weight: 800; letter-spacing: -1.5px; margin-bottom: 20px; line-height: 1.1; color: var(--text-main); }
+        .fixed-hero-bg p { font-size: 1.25rem; color: #ffffff; max-width: 700px; margin: 0 auto; line-height: 1.6; font-weight: 500; text-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+
+        /* =========================================
+           2. THE SCROLLING LAYER
+           ========================================= */
+        .scrolling-layer { position: relative; z-index: 5; width: 100%; }
+        .hero-spacer { height: 55vh; width: 100%; pointer-events: none; }
+        .solid-white-stack { position: relative; z-index: 10; width: 100%; padding-top: 20px; }
+
+        .stack-background-clipper {
+            position: absolute; inset: 0; background: #ffffff;
+            border-radius: 60px 60px 0 0;
+            box-shadow: 0 -25px 60px rgba(0,0,0,0.15);
+            overflow: hidden; z-index: 0;
+        }
+
+        .bag-pull-up { margin: -150px auto 40px; text-align: center; position: relative; z-index: 20; max-width: 500px; }
+        .hero-bag-img { width: 100%; height: auto; animation: floatImgDesktop 6s ease-in-out infinite; filter: drop-shadow(0 30px 40px rgba(106, 27, 154, 0.3)); will-change: transform; mix-blend-mode: multiply;}
+        @keyframes floatImgDesktop { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-20px); } }
+
+        /* Translucent Branded Glow Lines Inside the Stack */
+        .glow-line { position: absolute; width: 150%; height: 100px; filter: blur(45px); opacity: 0.35; transform-origin: left center; }
+        .line-1 { background: linear-gradient(90deg, transparent, var(--honey-purple), transparent); top: 5%; left: -10%; transform: rotate(25deg); }
+        .line-2 { background: linear-gradient(90deg, transparent, var(--honey-yellow), transparent); top: 35%; right: -20%; transform: rotate(-35deg); transform-origin: right center; opacity: 0.25;}
+        .line-3 { background: linear-gradient(90deg, transparent, var(--honey-purple), transparent); bottom: 15%; left: -10%; transform: rotate(-15deg); }
+
+        .stack-content { position: relative; z-index: 5; }
+
+        /* =========================================
+           3. TRUE BACKLIGHTS FOR CARDS
+           ========================================= */
+        .card-backlight-wrapper { position: relative; border-radius: 24px; height: 100%; z-index: 1; }
+        .card-backlight-wrapper::before {
+            content: ''; position: absolute; inset: 0; border-radius: inherit; z-index: -1; 
+            filter: blur(25px); opacity: 0.15; transform: scale(1.02) translateZ(0); 
+            transition: opacity 0.5s ease, transform 0.5s ease; pointer-events: none;
+        }
+        .card-backlight-wrapper.glow-purple::before { background: var(--honey-purple); }
+        .card-backlight-wrapper.glow-yellow::before { background: var(--honey-yellow); }
+        
+        .card-backlight-wrapper:hover::before { opacity: 0.6; transform: scale(1.05) translateZ(0); }
+
+        .solid-card {
+            background: #ffffff; border-radius: inherit; height: 100%; border: 1px solid rgba(0,0,0,0.03);
+            position: relative; z-index: 2; transition: transform 0.5s ease, box-shadow 0.5s ease;
+        }
+        .card-backlight-wrapper:hover .solid-card { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0,0,0,0.05); }
+
+        /* Core Advantage Section */
+        .regional-advantage { padding: 0 5% 80px; }
+        .regional-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px; max-width: 1200px; margin: 0 auto; }
+        .regional-content { padding: 40px 30px; text-align: left; }
+        .icon-circle { width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 25px; }
+        .icon-yellow { background: rgba(255, 179, 0, 0.15); color: var(--honey-yellow); }
+        .icon-purple { background: rgba(106, 27, 154, 0.1); color: var(--honey-purple); }
+        .icon-dark { background: #f0f0f3; color: var(--text-main); }
+        .regional-content h4 { font-size: 1.35rem; font-weight: 700; margin-bottom: 15px; }
+        .regional-content p { font-size: 1.05rem; color: var(--text-secondary); line-height: 1.6; }
+
+        /* Dynamic Products Showcase */
+        .products-showcase { padding: 60px 5% 100px; background: #fafafa; border-radius: 50px; margin: 0 20px 80px; border: 1px solid rgba(0,0,0,0.02); }
+        .products-header { text-align: center; margin-bottom: 60px; }
+        
+        .product-flex { display: flex; align-items: stretch; border-radius: 30px; max-width: 1100px; margin: 0 auto; overflow: hidden; }
+        .product-flex.reverse { flex-direction: row-reverse; }
+        
+        .product-text-side { flex: 1.5; padding: 60px 50px; display: flex; flex-direction: column; justify-content: center; }
+        .product-badge { display: inline-block; padding: 6px 16px; border-radius: 50px; font-weight: 700; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 20px; align-self: flex-start; }
+        .product-text-side h3 { font-size: 2.2rem; font-weight: 800; margin-bottom: 20px; color: var(--text-main); line-height: 1.2; }
+        .product-text-side p { font-size: 1.1rem; color: var(--text-secondary); line-height: 1.7; margin-bottom: 15px; }
+        
+        .bg-purple-badge { background: var(--honey-purple); color: white; }
+        .bg-yellow-badge { background: var(--honey-yellow); color: #000; }
+
+        .product-visual-side { flex: 1; display: flex; align-items: center; justify-content: center; padding: 40px; position: relative; background: #f0f0f3; border-radius: 0 30px 30px 0; overflow: hidden; }
+        .product-flex.reverse .product-visual-side { border-radius: 30px 0 0 30px; }
+        
+        .product-number { font-size: 14rem; font-weight: 900; line-height: 0.8; letter-spacing: -8px; opacity: 0.08; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); user-select: none; z-index: 1; }
+        .product-number.purple { color: var(--honey-purple); }
+        .product-number.yellow { color: var(--honey-yellow); }
+        
+        .product-features { list-style: none; position: relative; z-index: 2; background: rgba(255,255,255,0.95); padding: 25px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); width: 100%; max-width: 280px; }
+        .product-features li { padding: 12px 0; border-bottom: 1px solid rgba(0,0,0,0.05); font-weight: 600; display: flex; align-items: center; gap: 10px; font-size: 1rem; }
+        .product-features li:last-child { border-bottom: none; }
+        .icon-purple-stroke svg { color: var(--honey-purple); }
+        .icon-yellow-stroke svg { color: var(--honey-yellow); }
+
+        .cta-button { display: inline-block; background: var(--honey-purple); color: white; padding: 12px 30px; border-radius: 12px; font-size: 1.05rem; font-weight: 700; text-decoration: none; transition: all 0.3s ease; font-family: inherit;}
+        .cta-button:hover { background: var(--honey-yellow); color: #000; box-shadow: 0 10px 20px rgba(255, 179, 0, 0.3); }
+
+        /* Manufacturing Timeline */
+        .timeline-section { padding: 80px 5% 100px; text-align: center; background: #fafafa; border-radius: 50px; margin: 0 20px 80px; border: 1px solid rgba(0,0,0,0.02); }
+        .timeline-container { position: relative; max-width: 900px; margin: 60px auto 0; text-align: left; }
+        .timeline-container::before { content: ''; position: absolute; left: 40px; top: 0; bottom: 0; width: 4px; background: rgba(0,0,0,0.05); border-radius: 2px; z-index: 0; }
+        
+        .timeline-item { display: flex; margin-bottom: 60px; position: relative; }
+        .timeline-item:last-child { margin-bottom: 0; }
+        
+        .timeline-icon { width: 84px; height: 84px; background: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; z-index: 3; box-shadow: 0 5px 15px rgba(0,0,0,0.08); flex-shrink: 0; position: relative; border: 4px solid var(--honey-purple); color: var(--honey-purple); transition: all 0.4s ease; }
+        .timeline-item:nth-child(even) .timeline-icon { border-color: var(--honey-yellow); color: var(--honey-yellow); }
+        
+        .timeline-wrapper { flex: 1; margin-left: 40px; min-width: 0; } 
+        .timeline-content { padding: 35px 40px; word-wrap: break-word; }
+        .timeline-content h4 { font-size: 1.4rem; font-weight: 800; margin-bottom: 10px; color: var(--text-main); }
+        .timeline-content p { color: var(--text-secondary); line-height: 1.6; font-size: 1.05rem; }
+
+        /* CTA */
+        .cta-container { padding: 0 5% 100px; }
+        .cta-electric-border { position: relative; max-width: 1000px; margin: 0 auto; border-radius: 46px; padding: 6px; overflow: hidden; box-shadow: 0 20px 50px rgba(106, 27, 154, 0.15); }
+        .cta-electric-border::before { content: ''; position: absolute; top: 50%; left: 50%; width: 250%; height: 250%; background: conic-gradient(from 0deg, transparent 70%, #ffffff 85%, var(--honey-purple) 95%, var(--honey-yellow) 100%); transform: translate(-50%, -50%); animation: spinElectricCTA 3s linear infinite; z-index: 0; }
+        @keyframes spinElectricCTA { 0% { transform: translate(-50%, -50%) rotate(0deg); } 100% { transform: translate(-50%, -50%) rotate(360deg); } }
+
+        .cta-banner { background: linear-gradient(135deg, var(--honey-purple) 0%, #4a0072 100%); border-radius: 40px; padding: 70px 30px; text-align: center; position: relative; z-index: 1; }
+        .cta-banner::after { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle at top right, rgba(255,255,255,0.1) 0%, transparent 60%); pointer-events: none; border-radius: 40px; }
+        .cta-content { position: relative; z-index: 2; max-width: 800px; margin: 0 auto; }
+        .cta-headline { font-size: clamp(2rem, 4vw, 3.5rem); font-weight: 800; letter-spacing: -1px; margin-bottom: 15px; color: white; }
+        .cta-button-large { display: inline-block; background: var(--honey-yellow); color: #000; padding: 15px 35px; border-radius: 50px; font-size: 1.1rem; font-weight: 700; text-decoration: none; box-shadow: 0 10px 20px rgba(0,0,0,0.15); transition: all 0.3s ease; margin-top: 25px; }
+        .cta-button-large:hover { transform: translateY(-4px) scale(1.05); box-shadow: 0 15px 30px rgba(255, 179, 0, 0.4); }
+
+        /* Footer */
+        .apple-footer { padding: 80px 5% 40px; background: #ffffff; border-top: 1px solid rgba(0,0,0,0.05); position: relative; z-index: 10; }
+        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; max-width: 1200px; margin: 0 auto 60px; }
+        
+        /* INCREASED LOGO SIZE BY ~20% */
+        .footer-logo { height: 48px; margin-bottom: 20px; margin-left: 0; }
+        
+        .footer-col h4 { margin-bottom: 20px; color: var(--text-main); font-size: 1.1rem; }
+        .footer-col p, .footer-col a { color: var(--text-secondary); margin-bottom: 12px; text-decoration: none; display: block; line-height: 1.5; font-size: 0.95rem; transition: color 0.2s; }
+        .footer-col a:hover { color: var(--honey-purple); }
+        .highlight-text { color: var(--honey-purple) !important; font-size: 1.1rem; font-weight: 600; margin-top: 15px; }
+        .highlight-text:hover { color: var(--honey-yellow) !important; }
+        .social-links { display: flex; gap: 15px; align-items: center; }
+        .social-links a { color: var(--text-secondary); transition: color 0.2s ease; display: flex; }
+        .social-links a:hover { color: var(--honey-purple); }
+        .footer-bottom { text-align: center; padding-top: 20px; border-top: 1px solid #e5e5ea; color: var(--text-secondary); font-size: 0.85rem; }
+
+        @media (min-width: 901px) { .hamburger { display: none !important; } }
+        @media (max-width: 900px) {
+            .desktop-nav-links { display: none; }
+            .split-hero { flex-direction: column; text-align: center; padding-top: 100px; gap: 30px; }
+            .hero-img-left { justify-content: center; width: 100%; max-width: 400px; margin: 0 auto; }
+            .hero-text-right { text-align: center; }
+            
+            .product-flex, .product-flex.reverse { flex-direction: column; text-align: center; }
+            .product-text-side { padding: 40px 20px 20px; }
+            .product-badge { align-self: center; }
+            .product-visual-side { padding: 40px 20px; border-radius: 0 0 30px 30px; min-height: 280px; }
+            .product-flex.reverse .product-visual-side { border-radius: 0 0 30px 30px; }
+            .product-features { margin: 0 auto; }
+            
+            .timeline-container::before { left: 30px; }
+            .timeline-icon { width: 60px; height: 60px; }
+            .timeline-wrapper { margin-left: 20px; }
+        }
+
+        @media (max-width: 768px) {
+            html { font-size: 93%; }
+            .liquid-pill { width: 95%; padding: 8px 15px; }
+            .header-logo { margin-left: 5px; }
+            .contact-info { display: none !important; }
+            .contact-slider { padding: 0; background: transparent; box-shadow: none; pointer-events: all; overflow: visible; }
+            .pill-contact { padding: 8px 18px; font-size: 0.9rem; margin-right: 5px; }
+            .header-controls { gap: 8px; }
+            
+            .fixed-hero-bg { padding-top: 110px; }
+            .fixed-hero-bg h1 { font-size: 2.3rem !important; margin-bottom: 15px; }
+            .fixed-hero-bg p { font-size: 1.05rem; }
+            
+            .hero-spacer { height: 45vh; }
+            .bag-pull-up { margin-top: -90px; margin-bottom: 30px; max-width: 250px; }
+
+            .stack-background-clipper { border-radius: 40px 40px 0 0; }
+            .section-title { font-size: 2rem; }
+            
+            .regional-advantage { padding: 0 20px 50px; }
+            .products-showcase { padding: 40px 20px 80px; margin: 0 10px 50px; border-radius: 30px; }
+            
+            .product-text-side h3 { font-size: 1.8rem; }
+            .product-number { font-size: 10rem; }
+            
+            .timeline-section { padding: 50px 20px 80px; margin: 0 10px 50px; border-radius: 30px; }
+            .timeline-container::before { left: 22px; } 
+            .timeline-icon { width: 48px; height: 48px; }
+            .timeline-wrapper { margin-left: 15px; min-width: 0; }
+            .timeline-content { padding: 25px 20px; }
+            .timeline-content h4 { font-size: 1.2rem; }
+            
+            .cta-container { padding: 0 15px 60px; }
+            .cta-electric-border { border-radius: 34px; padding: 4px; }
+            .cta-banner { padding: 50px 20px; border-radius: 30px; }
+            
+            .cta-headline { font-size: calc(clamp(2rem, 4vw, 3.5rem) * 0.8) !important; }
+            .cta-button-large { font-size: 1rem; padding: 12px 28px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="click-ripple-container"></div>
+
+    <div id="menu-overlay">
+        <nav class="overlay-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="products.html" style="color: var(--honey-yellow) !important;">Products</a>
+            <a href="contact.html">Contact Us</a>
+        </nav>
+    </div>
+
+    <header class="liquid-pill-wrapper">
+        <nav class="liquid-pill">
+            <a href="index.html" style="display: flex; align-items: center; text-decoration: none;">
+                <img src="logo.png" alt="Honey in Spoon Logo" class="header-logo">
+            </a>
+            
+            <div class="desktop-nav-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="products.html" style="color: var(--honey-purple);">Products</a>
+                <a href="contact.html">Contact Us</a>
+            </div>
+
+            <div class="header-controls">
+                <div class="contact-slider" id="contactSlider">
+                    <div class="contact-info">
+                        <span>hunyinc@gmail.com</span>
+                    </div>
+                    <button class="pill-contact" id="contactBtn">Contact</button>
+                </div>
+                
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="fixed-hero-bg">
+        <h1 class="glare-white">Perfectly Portioned Sweetness.</h1>
+        <p>At Huny Inc, our spoons are expertly crafted to bring you 100% pure, unadulterated honey infused with heritage flavors, designed for an effortless, mess-free lifestyle.</p>
+    </div>
+
+    <div class="scrolling-layer">
+        <div class="hero-spacer"></div>
+
+        <div class="solid-white-stack">
+            
+            <div class="bag-pull-up">
+                <img src="honey-spoon-product.jpg" alt="Honey in Spoon Variety Box" class="hero-bag-img" onerror="this.src='https://images.unsplash.com/photo-1587049352847-81a56d773c1c?q=80&w=800&auto=format&fit=crop'">
+            </div>
+
+            <div class="stack-background-clipper">
+                <div class="decorative-lines">
+                    <div class="glow-line line-1"></div>
+                    <div class="glow-line line-2"></div>
+                    <div class="glow-line line-3"></div>
+                </div>
+            </div>
+
+            <div class="stack-content">
+
+                <!-- The Advantage Section -->
+                <section class="regional-advantage">
+                    <span class="section-sub">— THE HUNY INC ADVANTAGE</span>
+                    <h2 class="section-title">Why Choose Our Spoons?</h2>
+                    <p style="color: var(--text-secondary); max-width: 800px; margin: 0 auto 50px; font-size: 1.15rem; line-height: 1.6; text-align: center;">
+                        We have redefined how you consume natural sweetness. Our innovative packaging solves the everyday problems of traditional honey jars.
+                    </p>
+                    
+                    <div class="regional-grid">
+                        <div class="card-backlight-wrapper glow-purple">
+                            <div class="solid-card regional-content">
+                                <div class="icon-circle icon-purple">
+                                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+                                </div>
+                                <h4>Zero Mess, Zero Sticky Jars</h4>
+                                <p>No more dripping spoons or crystallized jars. Just peel back the foil, stir it into your beverage, and enjoy a flawless experience.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="card-backlight-wrapper glow-yellow">
+                            <div class="solid-card regional-content">
+                                <div class="icon-circle icon-yellow">
+                                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                                </div>
+                                <h4>Exact Measurements</h4>
+                                <p>Each spoon contains the precise amount of honey required for a standard cup, ensuring consistent taste and strict calorie control.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="card-backlight-wrapper glow-purple">
+                            <div class="solid-card regional-content">
+                                <div class="icon-circle icon-dark">
+                                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                                </div>
+                                <h4>Travel Friendly</h4>
+                                <p>Whether you're at the office, in a hotel, or traveling the world, our individually sealed spoons guarantee hygiene and ease on the go.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Dynamic Firebase Products Rendered Here -->
+                <section class="products-showcase">
+                    <div class="products-header">
+                        <span class="section-sub">— THE COLLECTION</span>
+                        <h2 class="section-title">Our Signature Infusions</h2>
+                    </div>
+
+                    <div id="dynamic-products-showcase">
+                        <p style="text-align:center; color:var(--text-secondary);">Syncing live store inventory...</p>
+                    </div>
+                </section>
+
+                <!-- Processing Timeline -->
+                <section class="timeline-section">
+                    <span class="section-sub">— ARTISANAL CRAFTING</span>
+                    <h2 class="section-title">From Hive to Cup</h2>
+                    
+                    <div class="timeline-container">
+                        
+                        <div class="timeline-item">
+                            <div class="timeline-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="36" height="36"><path d="M8 3l4 8 5-5 5 15H2L8 3z"/></svg>
+                            </div>
+                            <div class="timeline-wrapper card-backlight-wrapper glow-purple">
+                                <div class="solid-card timeline-content">
+                                    <h4>1. Pure Extraction</h4>
+                                    <p>We source our 100% natural honey directly from organic apiaries, ensuring zero synthetic additives, maintaining the nectar's rich enzymes and pristine quality.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <div class="timeline-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="36" height="36"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+                            </div>
+                            <div class="timeline-wrapper card-backlight-wrapper glow-yellow">
+                                <div class="solid-card timeline-content">
+                                    <h4>2. Temperature Controlled Infusion</h4>
+                                    <p>Our authentic ingredients—like Saffron and Kehwa spices—are gently infused into the honey under strict temperature controls to flawlessly marry the flavors without degrading the honey's nutrients.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <div class="timeline-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="36" height="36"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                            </div>
+                            <div class="timeline-wrapper card-backlight-wrapper glow-purple">
+                                <div class="solid-card timeline-content">
+                                    <h4>3. Sterile Sealing</h4>
+                                    <p>The infused honey is precisely measured into food-safe spoons and hermetically sealed with protective foil in a completely sterile environment, guaranteeing untouched hygiene until it reaches your cup.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+
+                <div class="cta-container">
+                    <div class="cta-electric-border">
+                        <div class="cta-banner">
+                            <div class="cta-content">
+                                <h2 class="cta-headline">Redefining Sweetness with <span style="color: var(--honey-yellow) !important;">Huny Inc</span></h2>
+                                <p class="text-white" style="opacity: 0.9; margin-bottom: 5px; font-size: 1.15rem;">Authentic flavors, modern convenience, and uncompromising quality.</p>
+                                <a href="contact.html" class="cta-button-large">Partner With Us</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div> 
+        </div> 
+    </div>
+
+    <footer class="apple-footer">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <img src="logo.png" alt="Honey in Spoon Corporate Logo" class="footer-logo">
+                <p>Pure, Convenient & Perfectly Portioned for your daily delight.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Contact Info</h4>
+                <p>Honey in Spoon Inc.</p>
+                <p>Srinagar, Jammu and Kashmir, 190008</p>
+                <a href="mailto:hunyinc@gmail.com" class="highlight-text">hunyinc@gmail.com</a>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <a href="about.html">About Us</a>
+                <a href="products.html">Products</a>
+                <a href="contact.html">Contact Us</a>
+            </div>
+            <div class="footer-col">
+                <h4>Social</h4>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/huny.spoon?" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                    </a>
+                    <a href="https://www.facebook.com/profile.php?id=61594509522063&rdid=SZcBOONl0XxB41A4&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1HYG5X1o2E%2F" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.469h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.469h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026, Honey in Spoon. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Firebase & Logic -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js";
+        import { getFirestore, collection, getDocs, query, orderBy } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-firestore.js";
+
+        // Firebase Configuration for Honey in Spoon
+        const firebaseConfig = {
+            apiKey: "AIzaSyDFkaY_Xgmmj_H5UQsmY0yk6F_W7iBiBPk",
+            authDomain: "honey-in-spoon-ba23e.firebaseapp.com",
+            projectId: "honey-in-spoon-ba23e",
+            storageBucket: "honey-in-spoon-ba23e.firebasestorage.app",
+            messagingSenderId: "636734187263",
+            appId: "1:636734187263:web:486fb9c0023b0bb4b94eca"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+
+        // UI Interactions
+        document.addEventListener('DOMContentLoaded', () => {
+            const rippleContainer = document.getElementById('click-ripple-container');
+            window.addEventListener('click', (e) => {
+                if (e.target.closest('.hamburger') || e.target.closest('.overlay-links a') || e.target.closest('button')) {
+                    if (!rippleContainer) return;
+                    const circle = document.createElement('div');
+                    circle.classList.add('click-ripple-circle');
+                    circle.style.left = `${e.clientX}px`;
+                    circle.style.top = `${e.clientY}px`;
+                    rippleContainer.appendChild(circle);
+                    setTimeout(() => circle.remove(), 800);
+                }
+            });
+
+            const contactBtn = document.getElementById('contactBtn');
+            const contactInfo = document.querySelector('.contact-info');
+            if(contactBtn) {
+                contactBtn.addEventListener('click', (e) => {
+                    if (window.innerWidth > 768) {
+                        e.preventDefault();
+                        if(contactInfo) contactInfo.classList.toggle('expanded');
+                    } else {
+                        window.location.href = 'mailto:hunyinc@gmail.com';
+                    }
+                });
+            }
+
+            const hamburger = document.getElementById('hamburger');
+            const menuOverlay = document.getElementById('menu-overlay');
+            const overlayLinks = document.querySelectorAll('.overlay-links a');
+            
+            if(hamburger) {
+                hamburger.addEventListener('click', () => {
+                    hamburger.classList.toggle('active');
+                    menuOverlay.classList.toggle('active');
+                    const spans = hamburger.querySelectorAll('span');
+                    if (hamburger.classList.contains('active')) {
+                        spans.forEach(span => span.style.background = 'var(--honey-yellow)');
+                    } else {
+                        spans.forEach(span => span.style.background = 'var(--text-main)');
+                    }
+                });
+            }
+
+            overlayLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    if(hamburger) hamburger.classList.remove('active');
+                    if(menuOverlay) menuOverlay.classList.remove('active');
+                    if(hamburger) hamburger.querySelectorAll('span').forEach(span => span.style.background = 'var(--text-main)');
+                });
+            });
+
+            const liquidPill = document.querySelector('.liquid-pill');
+            let isScrolled = false;
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50 && !isScrolled) {
+                    if (liquidPill) liquidPill.classList.add('scrolled');
+                    isScrolled = true;
+                } else if (window.scrollY <= 50 && isScrolled) {
+                    if (liquidPill) liquidPill.classList.remove('scrolled');
+                    isScrolled = false;
+                }
+            }, { passive: true });
+        });
+
+        // Email Purchase Function
+        window.purchaseViaEmail = function(title, price, items) {
+            const email = "hunyinc@gmail.com";
+            const subject = `Order Request: ${title} Honey Spoon Box`;
+            const body = `Hi! I would like to purchase the ${title} Honey Spoon Box (${items} items) priced at ₹${price}.\n\nPlease let me know the availability and payment details.`;
+            const url = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            window.location.href = url;
+        };
+
+        // Firebase Products Fetch & Render Logic
+        async function fetchProductsAndRender() {
+            const container = document.getElementById('dynamic-products-showcase');
+            if (!container || !db) return;
+            
+            try {
+                const q = query(collection(db, "products"), orderBy("order", "asc"));
+                const querySnapshot = await getDocs(q);
+                
+                let html = '';
+                let isReverse = false;
+                let index = 1;
+                
+                querySnapshot.forEach((doc) => {
+                    const p = doc.data();
+                    const numStr = index.toString().padStart(2, '0');
+                    
+                    const reverseClass = isReverse ? 'reverse' : '';
+                    const colorClass = isReverse ? 'yellow' : 'purple';
+                    const bgClass = isReverse ? 'bg-yellow-badge' : 'bg-purple-badge';
+                    const glowClass = isReverse ? 'glow-yellow' : 'glow-purple';
+                    const strokeClass = isReverse ? 'icon-yellow-stroke' : 'icon-purple-stroke';
+
+                    const btnHtml = p.inStock 
+                        ? `<button class="cta-button" onclick="purchaseViaEmail('${p.title.replace(/'/g, "\\'")}', ${p.price}, ${p.itemsPerBox})" style="margin-top:25px; border:none; cursor:pointer;">Order Now - ₹${p.price}</button>`
+                        : `<button class="cta-button" style="margin-top:25px; background:#e5e5ea; color:#86868b; box-shadow:none; cursor:not-allowed;" disabled>Currently Sold Out</button>`;
+
+                    const originalPriceStrike = p.originalPrice ? `<span style="text-decoration:line-through; opacity:0.6; font-size:0.9rem; margin-left:10px;">₹${p.originalPrice}</span>` : '';
+
+                    html += `
+                        <div class="card-backlight-wrapper ${glowClass}" style="max-width: 1100px; margin: 0 auto 50px;">
+                            <div class="solid-card product-flex ${reverseClass}">
+                                <div class="product-text-side">
+                                    <span class="product-badge ${bgClass}">${p.discount ? p.discount : 'Premium Quality'}</span>
+                                    <h3>${p.title}</h3>
+                                    <p>${p.description}</p>
+                                    <p style="font-weight:700; color:var(--text-main); font-size:1.15rem;">Box of ${p.itemsPerBox} Spoons ${originalPriceStrike}</p>
+                                    <div>${btnHtml}</div>
+                                </div>
+                                <div class="product-visual-side">
+                                    <div class="product-number ${colorClass}">${numStr}</div>
+                                    <ul class="product-features ${strokeClass}">
+                                        <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg> 100% Pure Honey</li>
+                                        <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg> Mess-Free Stirring</li>
+                                        <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg> Authentic Infusion</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                    
+                    isReverse = !isReverse;
+                    index++;
+                });
+                
+                if(html !== '') container.innerHTML = html;
+                else container.innerHTML = '<p style="text-align:center; color:var(--text-secondary);">Currently updating our store inventory.</p>';
+                
+            } catch (error) {
+                console.error("Error fetching products:", error);
+                container.innerHTML = `<p style="text-align:center; width:100%; color:var(--text-secondary);">Connecting to live inventory...</p>`;
+            }
+        }
+
+        // Initialize Products Fetch
+        fetchProductsAndRender();
+    </script>
+</body>
+</html>

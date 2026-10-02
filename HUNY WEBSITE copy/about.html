@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Honey in Spoon</title>
+    
+    <!-- Core SEO Meta Tags -->
+    <meta name="description" content="Discover the story behind Huny Inc. Learn about our meticulous production process, our core philosophy, and what makes our infused honey spoons extraordinary.">
+    <meta name="keywords" content="Honey in Spoon, about Huny Inc, pure honey story, honey spoons philosophy, ethical honey sourcing, Srinagar honey company">
+    <meta name="author" content="Honey in Spoon Inc.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.yourwebsite.com/about.html"> <!-- Replace with your actual domain -->
+
+    <!-- Open Graph / Facebook SEO -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.yourwebsite.com/about.html">
+    <meta property="og:title" content="About Us | Honey in Spoon">
+    <meta property="og:description" content="Discover the story behind Huny Inc. Learn about our meticulous production process, our core philosophy, and what makes our infused honey spoons extraordinary.">
+    <meta property="og:image" content="logo.png">
+
+    <!-- Twitter SEO -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="About Us | Honey in Spoon">
+    <meta name="twitter:description" content="Discover the story behind Huny Inc. Learn about our meticulous production process, our core philosophy, and what makes our infused honey spoons extraordinary.">
+    <meta name="twitter:image" content="logo.png">
+
+    <link rel="icon" type="image/png" href="favicon.png">
+    
+    <style>
+        :root {
+            --honey-yellow: #FFB300;
+            --honey-purple: #6A1B9A;
+            --bg-white: #ffffff;
+            --text-main: #1d1d1f;
+            --text-secondary: #86868b;
+            --glass-bg: rgba(255, 255, 255, 0.45);
+            --glass-border: rgba(0, 0, 0, 0.05);
+        }
+
+        html { font-size: 93%; } 
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, sans-serif; }
+        body, html { width: 100%; height: 100%; overflow-x: hidden; scroll-behavior: smooth; background-color: var(--bg-white); color: var(--text-main); }
+
+        .bg-stack-underlay { background-color: var(--honey-purple); color: var(--text-main); }
+        .text-purple { color: var(--honey-purple); }
+        .text-yellow { color: var(--honey-yellow); }
+        .text-white { color: #ffffff !important; }
+        .text-center { text-align: center; }
+        .bg-white { background-color: var(--bg-white) !important; }
+        .font-light { font-weight: 300 !important; } 
+
+        #click-ripple-container { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; pointer-events: none; z-index: 99999; overflow: hidden; }
+        .click-ripple-circle { position: absolute; border-radius: 50%; background: #ffffff; width: 10px; height: 10px; pointer-events: none; transform: translate(-50%, -50%) scale(0); animation: linearRipple 0.8s cubic-bezier(0.1, 0.8, 0.3, 1) forwards; will-change: transform, opacity; }
+        @keyframes linearRipple { 0% { transform: translate(-50%, -50%) scale(0); opacity: 0.9; } 100% { transform: translate(-50%, -50%) scale(65); opacity: 0; } }
+
+        #menu-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100vh; background: rgba(255, 255, 255, 0.96); backdrop-filter: blur(30px); display: flex; justify-content: center; align-items: center; pointer-events: none; z-index: 900; clip-path: circle(0% at calc(100% - 60px) 45px); transition: clip-path 0.6s cubic-bezier(0.77, 0, 0.175, 1); will-change: clip-path; }
+        #menu-overlay.active { clip-path: circle(150% at calc(100% - 60px) 45px); pointer-events: all; }
+        .overlay-links { display: flex; flex-direction: column; align-items: center; gap: 20px; width: 100%; max-width: 400px; }
+        .overlay-links a { display: flex; align-items: center; justify-content: center; width: 280px; height: 56px; border-radius: 50px; color: var(--text-main); text-decoration: none; font-size: 1.25rem; font-weight: 600; letter-spacing: -0.5px; position: relative; background: #ffffff; border: 1px solid rgba(0, 0, 0, 0.08); overflow: hidden; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05); transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); z-index: 1; transform: translateZ(0); }
+        .overlay-links a::before { content: ''; position: absolute; top: 50%; left: 50%; width: 500px; height: 500px; background: conic-gradient(from 0deg, transparent 60%, var(--honey-purple) 75%, var(--honey-yellow) 100%); transform: translate(-50%, -50%) rotate(0deg); animation: spinElectric 3.5s linear infinite; z-index: -2; opacity: 0.3; transition: opacity 0.4s; will-change: transform; }
+        .overlay-links a::after { content: ''; position: absolute; inset: 2px; background: #ffffff; border-radius: 50px; z-index: -1; transition: background 0.3s; }
+        .overlay-links a:hover { transform: scale(1.05) translateY(-2px); color: var(--honey-yellow); box-shadow: 0 0 30px rgba(255, 179, 0, 0.15), 0 0 15px rgba(106, 27, 154, 0.1); }
+        .overlay-links a:hover::before { opacity: 1; }
+        .overlay-links a:hover::after { background: #f9f9f9; }
+
+        .liquid-pill-wrapper { position: fixed; top: 20px; left: 0; width: 100%; display: flex; justify-content: center; z-index: 1000; pointer-events: none; }
+        .liquid-pill { display: flex; align-items: center; justify-content: space-between; background: var(--glass-bg); backdrop-filter: blur(40px) saturate(250%); border: 1px solid var(--glass-border); box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.9), 0 10px 30px rgba(0,0,0,0.08); border-radius: 100px; padding: 8px 16px 8px 15px; width: 90%; max-width: 1200px; transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); pointer-events: all; will-change: padding, border-radius, max-width, background; }
+        .liquid-pill.scrolled { padding: 10px 15px 10px 20px; background: rgba(255, 255, 255, 0.96); max-width: 100%; border-radius: 0px; border: none; border-bottom: 1px solid rgba(0, 0, 0, 0.05); box-shadow: 0 5px 15px rgba(0,0,0,0.03); }
+
+        /* INCREASED LOGO SIZE BY ~20% */
+        .header-logo { height: 51px; object-fit: contain; margin-left: 20px; }
+        .desktop-nav-links { display: flex; gap: 32px; align-items: center; justify-content: center; flex: 1; padding: 0 40px; }
+        .desktop-nav-links a { color: var(--text-main); text-decoration: none; font-size: 0.95rem; font-weight: 600; transition: color 0.3s; white-space: nowrap; }
+        .desktop-nav-links a:hover { color: var(--honey-yellow); }
+
+        .header-controls { display: flex; align-items: center; gap: 20px; flex-shrink: 0; margin-right: 5px; }
+        .contact-slider { display: flex; align-items: center; background: white; border-radius: 50px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); padding: 4px; overflow: hidden; transform: translateZ(0); }
+        .contact-info { max-width: 0; opacity: 0; white-space: nowrap; overflow: hidden; transition: max-width 0.4s ease, opacity 0.3s ease, padding 0.4s ease; display: flex; align-items: center; font-size: 0.9rem; font-weight: 600; color: var(--text-main); will-change: max-width, opacity; }
+        .contact-info.expanded { max-width: 300px; opacity: 1; padding: 0 15px 0 10px; pointer-events: all; }
+        .contact-info .divider { color: #d2d2d7; margin: 0 10px; font-weight: 300; }
+        .pill-contact { background: var(--honey-purple); color: white; border: none; padding: 10px 24px; border-radius: 50px; font-weight: 600; cursor: pointer; transition: background 0.3s ease; position: relative; z-index: 5; }
+        .pill-contact:hover { background: var(--honey-yellow); color: #000; }
+
+        .hamburger { display: flex; flex-direction: column; gap: 6px; cursor: pointer; z-index: 2000; padding: 10px; }
+        .hamburger span { width: 28px; height: 2px; background: var(--text-main); border-radius: 2px; transition: transform 0.4s ease, background-color 0.4s ease; will-change: transform; }
+        .hamburger.active span:nth-child(1) { transform: translateY(8px) rotate(45deg); background: var(--honey-yellow); }
+        .hamburger.active span:nth-child(2) { transform: translateY(-8px) rotate(-45deg); background: var(--honey-yellow); }
+
+        .glare-purple { background: linear-gradient(to right, var(--honey-purple) 0%, #fff 10%, var(--honey-purple) 20%); background-size: 200% auto; -webkit-background-clip: text; -webkit-text-fill-color: transparent !important; animation: shineText 4s linear infinite forwards; }
+        .smooth-glare-purple { background: linear-gradient(to right, var(--honey-purple) 0%, var(--honey-purple) 40%, #ce93d8 50%, var(--honey-purple) 60%, var(--honey-purple) 100%); background-size: 200% auto; -webkit-background-clip: text; -webkit-text-fill-color: transparent !important; animation: shineText 4s linear infinite; }
+        .smooth-glare-yellow { background: linear-gradient(to right, var(--honey-yellow) 0%, var(--honey-yellow) 40%, #ffe082 50%, var(--honey-yellow) 60%, var(--honey-yellow) 100%); background-size: 200% auto; -webkit-background-clip: text; -webkit-text-fill-color: transparent !important; animation: shineText 4s linear infinite; }
+        .smooth-glare-dark { background: linear-gradient(to right, var(--text-main) 0%, var(--text-main) 40%, #a0a0a0 50%, var(--text-main) 60%, var(--text-main) 100%); background-size: 200% auto; -webkit-background-clip: text; -webkit-text-fill-color: transparent !important; animation: shineText 4s linear infinite; }
+        @keyframes shineText { 0% { background-position: 200% center; } 100% { background-position: -200% center; } }
+        @keyframes spinElectric { 0% { transform: translate(-50%, -50%) rotate(0deg); } 100% { transform: translate(-50%, -50%) rotate(360deg); } }
+
+        .section-sub { color: var(--honey-yellow); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 30px; font-size: 0.95rem; font-weight: 700; }
+        .section-title { font-size: 2.8rem; font-weight: 800; line-height: 1.15; margin-bottom: 25px; letter-spacing: -1.5px; text-align: center; }
+
+        .stack-main-container { padding-top: 100px; }
+        .solid-white-stack { background: #ffffff; border-radius: 50px 50px 0 0; box-shadow: 0 -15px 40px rgba(0,0,0,0.06); overflow: hidden; position: relative; z-index: 5; margin: 0 auto; width: 100%; max-width: 100vw; transform: translateZ(0); }
+
+        .split-hero { display: flex; align-items: center; justify-content: center; gap: 60px; padding: 120px 5% 150px; max-width: 1200px; margin: 0 auto; }
+        .hero-img-left { flex: 1.2; display: flex; justify-content: flex-end; }
+        .hero-float-img { width: 100%; height: auto; max-height: 450px; object-fit: contain; animation: floatImgDesktop 8s ease-in-out infinite; filter: drop-shadow(0 20px 30px rgba(106, 27, 154, 0.15)); will-change: transform; mix-blend-mode: multiply; }
+        .hero-text-right { flex: 1; text-align: left; }
+        .hero-text-right h1 { font-size: clamp(3rem, 5vw, 4.5rem); font-weight: 800; letter-spacing: -1.5px; margin-bottom: 25px; line-height: 1.1; }
+        .hero-text-right p { font-size: 1.25rem; color: var(--text-secondary); line-height: 1.8; font-weight: 400; }
+        @keyframes floatImgDesktop { 0% { transform: translateY(0px) scale(0.95); } 50% { transform: translateY(-15px) scale(0.95); } 100% { transform: translateY(0px) scale(0.95); } }
+
+        /* Core Philosophy Section */
+        .philosophy-section { padding: 80px 20px; background: #fafafa; border-top: 1px solid rgba(0,0,0,0.03); border-bottom: 1px solid rgba(0,0,0,0.03); }
+        .philosophy-header { text-align: center; max-width: 900px; margin: 0 auto; }
+        .rich-description { font-size: 1.2rem; color: var(--text-secondary); line-height: 1.8; text-align: center; }
+        .rich-description p { margin-bottom: 25px; font-weight: 400; }
+        
+        .cssbuttons-io-button { background: var(--honey-purple); color: white; font-family: inherit; padding: 0.35em 3.3em 0.35em 1.2em; font-size: 17px; font-weight: 500; border-radius: 0.9em; border: none; letter-spacing: 0.05em; display: flex; align-items: center; box-shadow: inset 0 0 1.6em -0.6em #4a0072; overflow: hidden; position: relative; height: 2.8em; cursor: pointer;}
+        .cssbuttons-io-button .icon { background: white; margin-left: 1em; position: absolute; display: flex; align-items: center; justify-content: center; height: 2.2em; width: 2.2em; border-radius: 0.7em; box-shadow: 0.1em 0.1em 0.6em 0.2em rgba(106, 27, 154, 0.5); right: 0.3em; transition: all 0.3s; }
+        .cssbuttons-io-button:hover .icon { width: calc(100% - 0.6em); }
+        .cssbuttons-io-button .icon svg { width: 1.1em; transition: transform 0.3s; color: var(--honey-purple); }
+        .cssbuttons-io-button:hover .icon svg { transform: translateX(0.1em); }
+        
+        /* Timeline: The Process */
+        .process-section { padding: 100px 20px; background: #ffffff; overflow: hidden; }
+        .timeline { position: relative; max-width: 1000px; margin: 60px auto 0; padding: 20px 0; }
+        .timeline::before { content: ''; position: absolute; left: 50%; top: 0; width: 4px; height: 100%; background: linear-gradient(to bottom, var(--honey-yellow), var(--honey-purple), var(--honey-yellow)); transform: translateX(-50%); border-radius: 10px; opacity: 0.8; }
+        .timeline-item { position: relative; width: 50%; padding: 20px 50px; box-sizing: border-box; }
+        .timeline-item:nth-child(odd) { left: 0; text-align: right; }
+        .timeline-item:nth-child(even) { left: 50%; text-align: left; }
+        .timeline-dot { position: absolute; top: 35px; width: 24px; height: 24px; background: #ffffff; border: 5px solid var(--honey-purple); border-radius: 50%; z-index: 2; box-shadow: 0 0 15px rgba(255, 179, 0, 0.6); transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
+        .timeline-item:nth-child(odd) .timeline-dot { right: -12px; }
+        .timeline-item:nth-child(even) .timeline-dot { left: -12px; }
+        .timeline-content { background: #fafafa; padding: 35px 30px; border-radius: 24px; border: 1px solid rgba(0,0,0,0.04); transition: transform 0.4s, box-shadow 0.4s; box-shadow: 0 10px 30px rgba(0,0,0,0.03); position: relative; }
+        .timeline-item:hover .timeline-content { transform: translateY(-5px); box-shadow: 0 15px 40px rgba(106, 27, 154, 0.1); }
+        .timeline-item:hover .timeline-dot { background: var(--honey-yellow); border-color: var(--honey-yellow); transform: scale(1.4); box-shadow: 0 0 25px rgba(255, 179, 0, 0.8); }
+        .timeline-content h4 { font-size: 1.4rem; color: var(--honey-purple); font-weight: 800; margin-bottom: 12px; }
+        .timeline-content p { font-size: 1.05rem; color: var(--text-secondary); line-height: 1.6; }
+
+        /* Premium What Sets Us Apart */
+        .features-section { padding: 100px 20px 120px; text-align: center; background: #fafafa; border-top: 1px solid rgba(0,0,0,0.02); }
+        .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; max-width: 1200px; margin: 0 auto; margin-top: 60px; }
+        
+        .premium-feature-card { background: #ffffff; border-radius: 30px; padding: 50px 40px; position: relative; z-index: 1; box-shadow: 0 20px 40px rgba(0,0,0,0.04); transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1); overflow: hidden; text-align: left; border: 1px solid rgba(0,0,0,0.03); }
+        .premium-feature-card::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: conic-gradient(from 0deg, transparent 70%, rgba(255,179,0,0.3) 80%, rgba(106,27,154,0.3) 100%); animation: spinElectric 4s linear infinite; opacity: 0; transition: opacity 0.5s; z-index: -1; }
+        .premium-feature-card:hover { transform: translateY(-10px); box-shadow: 0 30px 60px rgba(106,27,154,0.15); }
+        .premium-feature-card:hover::before { opacity: 1; }
+        
+        .icon-wrapper { width: 70px; height: 70px; border-radius: 20px; background: rgba(255,179,0,0.15); display: flex; align-items: center; justify-content: center; margin-bottom: 25px; color: var(--honey-purple); transition: all 0.4s; }
+        .premium-feature-card:hover .icon-wrapper { background: var(--honey-purple); color: var(--honey-yellow); transform: scale(1.1) rotate(5deg); }
+        
+        .premium-feature-card h4 { font-size: 1.5rem; font-weight: 800; margin-bottom: 15px; color: var(--text-main); letter-spacing: -0.5px; }
+        .premium-feature-card p { color: var(--text-secondary); line-height: 1.6; font-size: 1.05rem; }
+
+        /* FAQ Section */
+        .faq-section { padding: 80px 20px 120px; background: #ffffff; }
+        .faq-container { max-width: 900px; margin: 0 auto; display: flex; flex-direction: column; gap: 15px; }
+        .faq-item { background: #f5f5f7; border-radius: 16px; overflow: hidden; transition: background 0.3s ease; transform: translateZ(0); }
+        .faq-question { padding: 25px 30px; font-size: 1.15rem; font-weight: 700; color: var(--text-main); display: flex; justify-content: space-between; align-items: center; cursor: pointer; transition: background 0.3s; }
+        .faq-question:hover { background: #eaeaea; }
+        .faq-icon { color: var(--honey-yellow); font-size: 1.5rem; font-weight: 300; transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1); display: flex; align-items: center; justify-content: center; width: 30px; height: 30px; background: white; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+        .faq-answer { max-height: 0; opacity: 0; padding: 0 30px; color: var(--text-secondary); font-size: 1.05rem; line-height: 1.6; border-top: 1px solid transparent; overflow: hidden; transition: max-height 0.4s ease, opacity 0.3s ease, padding 0.4s ease; }
+        .faq-item.active .faq-question { background: #eaeaea; }
+        .faq-item.active .faq-icon { transform: rotate(180deg); color: #000; background: var(--honey-yellow); }
+        .faq-item.active .faq-answer { max-height: 500px; opacity: 1; padding: 25px 30px; border-top: 1px solid rgba(0,0,0,0.05); }
+        .faq-item p { margin: 0; }
+        .faq-cursor::after { content: '|'; animation: blink 1s step-end infinite; }
+        @keyframes blink { 50% { opacity: 0; } }
+
+        /* Modals & Overlays */
+        .modal-overlay { position: fixed; inset: 0; background: rgba(0, 0, 0, 0.4); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); z-index: 10000; display: flex; align-items: center; justify-content: center; padding: 20px; opacity: 0; pointer-events: none; transition: opacity 0.4s ease; }
+        .modal-overlay.active { opacity: 1; pointer-events: all; }
+        .modal-content { background: #ffffff; width: 100%; max-width: 750px; border-radius: 32px; padding: 50px; box-shadow: 0 20px 60px rgba(0,0,0,0.15); position: relative; transform: translateY(40px) scale(0.98); transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1); max-height: 90vh; overflow-y: auto; }
+        .modal-overlay.active .modal-content { transform: translateY(0) scale(1); }
+        
+        #clients-modal { opacity: 1; clip-path: circle(0% at 50% 100%); transition: clip-path 0.7s cubic-bezier(0.77, 0, 0.175, 1); background: rgba(255,255,255,0.95); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); }
+        #clients-modal.active { clip-path: circle(150% at 50% 100%); }
+        #clients-modal .modal-content { transform: none; box-shadow: none; background: transparent; padding: 40px 20px; max-width: 1000px; margin: 0 auto; height: 100vh; max-height: 100vh; border-radius: 0; }
+        .close-modal { position: absolute; top: 25px; right: 25px; background: #f5f5f7; border: none; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; color: var(--text-main); transition: background 0.2s; z-index: 10; }
+        .close-modal:hover { background: #e5e5ea; }
+
+        .clients-wrapper { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 25px; margin-top: 40px; padding-bottom: 50px; }
+        .client-card { background: #ffffff; border: 1px solid rgba(0,0,0,0.06); border-radius: 20px; padding: 35px 30px; display: flex; flex-direction: column; justify-content: center; gap: 10px; transition: transform 0.4s ease, box-shadow 0.4s ease; position: relative; overflow: hidden; z-index: 2; }
+        .client-card:hover { transform: translateY(-5px); box-shadow: 0 15px 35px rgba(106, 27, 154, 0.08); }
+        .client-card::before { content: ''; position: absolute; left: 0; top: 0; width: 4px; height: 100%; background: var(--honey-yellow); border-radius: 20px 0 0 20px; }
+        .client-num { font-size: 4rem; font-weight: 800; color: rgba(106, 27, 154, 0.06); position: absolute; top: 10px; right: 20px; line-height: 1; z-index: 1; user-select: none; }
+        .client-name-text { font-size: 1.25rem; font-weight: 700; color: var(--text-main); z-index: 2; line-height: 1.4; padding-right: 20px; margin: 0; }
+
+        /* Footer */
+        .apple-footer { padding: 80px 5% 40px; background: var(--bg-white); border-top: 1px solid rgba(0,0,0,0.05);}
+        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; max-width: 1200px; margin: 0 auto 60px; }
+        
+        /* INCREASED LOGO SIZE BY ~20% */
+        .footer-logo { height: 48px; margin-bottom: 20px; margin-left: 0; }
+        
+        .footer-col h4 { margin-bottom: 20px; color: var(--text-main); font-size: 1.1rem; }
+        .footer-col p, .footer-col a { color: var(--text-secondary); margin-bottom: 12px; text-decoration: none; display: block; line-height: 1.5; font-size: 0.95rem; transition: color 0.2s; }
+        .footer-col a:hover { color: var(--honey-purple); }
+        .highlight-text { color: var(--honey-purple) !important; font-size: 1.1rem; font-weight: 600; margin-top: 15px; }
+        .highlight-text:hover { color: var(--honey-yellow) !important; }
+        .social-links { display: flex; gap: 15px; align-items: center; }
+        .social-links a { color: var(--text-secondary); transition: color 0.2s ease; display: flex; }
+        .social-links a:hover { color: var(--honey-purple); }
+        .footer-bottom { text-align: center; padding-top: 20px; border-top: 1px solid #e5e5ea; color: var(--text-secondary); font-size: 0.85rem; }
+
+        /* Responsive Design */
+        @media (min-width: 901px) { .hamburger { display: none !important; } }
+        @media (max-width: 900px) {
+            .desktop-nav-links { display: none; }
+            .split-hero { flex-direction: column; text-align: center; padding-top: 100px; gap: 30px; }
+            .hero-img-left { justify-content: center; width: 100%; max-width: 400px; margin: 0 auto; }
+            .hero-text-right { text-align: center; }
+            .timeline::before { left: 20px; }
+            .timeline-item { width: 100%; padding: 20px 0 20px 60px; }
+            .timeline-item:nth-child(odd), .timeline-item:nth-child(even) { left: 0; text-align: left; }
+            .timeline-item:nth-child(odd) .timeline-dot, .timeline-item:nth-child(even) .timeline-dot { left: 8px; right: auto; }
+        }
+
+        @media (max-width: 768px) {
+            html { font-size: 90%; } 
+            .liquid-pill { width: 95%; padding: 8px 15px; }
+            .header-logo { margin-left: 5px; }
+            .contact-info { display: none !important; }
+            .contact-slider { padding: 0; background: transparent; box-shadow: none; pointer-events: all; }
+            .pill-contact { padding: 8px 18px; font-size: 0.9rem; margin-right: 5px; }
+            .header-controls { gap: 8px; }
+            
+            .about-hero h1 { font-size: clamp(1.68rem, 7.3vw, 2.72rem) !important; white-space: nowrap; text-align: center; margin: 0 auto; overflow: hidden; text-overflow: ellipsis; max-width: 100%; }
+            .section-title { font-size: 2.125rem !important; }
+            .hero-text-right p { font-size: 1.06rem !important; margin: 20px auto 0; max-width: 95%; }
+            
+            #clients-modal .modal-content { padding-top: 90px !important; } 
+            #clients-modal h2.modal-name { font-size: 1.8rem !important; line-height: 1.2; white-space: normal; }
+            .clients-wrapper { grid-template-columns: 1fr; gap: 15px; margin-top: 10px; }
+            .client-card { padding: 25px 20px; flex-direction: row; align-items: center; min-height: 90px; }
+            .client-num { font-size: 3.5rem; top: 50%; transform: translateY(-50%); right: 15px; }
+            .client-name-text { font-size: 1.05rem; padding-right: 60px; }
+        }
+    </style>
+</head>
+<body class="bg-stack-underlay">
+
+    <div id="click-ripple-container"></div>
+
+    <div id="menu-overlay">
+        <nav class="overlay-links">
+            <a href="index.html">Home</a>
+            <a href="about.html" style="color: var(--honey-yellow) !important;">About Us</a>
+            <a href="products.html">Products</a>
+            <a href="contact.html">Contact Us</a>
+        </nav>
+    </div>
+
+    <header class="liquid-pill-wrapper">
+        <nav class="liquid-pill">
+            <a href="index.html" style="display: flex; align-items: center; text-decoration: none;">
+                <img src="logo.png" alt="Honey in Spoon Logo" class="header-logo">
+            </a>
+            
+            <div class="desktop-nav-links">
+                <a href="index.html">Home</a>
+                <a href="about.html" style="color: var(--honey-purple);">About Us</a>
+                <a href="products.html">Products</a>
+                <a href="contact.html">Contact Us</a>
+            </div>
+
+            <div class="header-controls">
+                <div class="contact-slider" id="contactSlider">
+                    <div class="contact-info">
+                        <span>hunyinc@gmail.com</span>
+                    </div>
+                    <button class="pill-contact" id="contactBtn">Contact</button>
+                </div>
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="stack-main-container">
+        <div class="solid-white-stack">
+            
+            <section class="about-hero split-hero bg-white">
+                <div class="hero-img-left">
+                    <img src="hero-honey.png" alt="Honey in Spoon Premium Box" class="hero-float-img" onerror="this.src='https://images.unsplash.com/photo-1621533263595-df703666f7d0?q=80&w=800&auto=format&fit=crop'">
+                </div>
+                <div class="hero-text-right">
+                    <h1 class="glare-purple">Redefining the Art of Sweetness</h1>
+                    <p>For years, enjoying pure honey meant dealing with sticky jars and messy pours. Huny Inc was born to change that. We bring you premium, unadulterated honey infused with traditional flavors like Saffron, Kehwa, and Pan, perfectly portioned in a convenient, ready-to-stir spoon.</p>
+                </div>
+            </section>
+
+            <section class="philosophy-section">
+                <div class="philosophy-header">
+                    <h3 class="section-sub">— OUR PHILOSOPHY</h3>
+                    <h2 class="section-title" style="margin-bottom: 30px;">
+                        <span class="smooth-glare-purple">The Core of </span> <span class="smooth-glare-yellow">Huny Inc</span>
+                    </h2>
+                    <div class="rich-description">
+                        <p>At the heart of Huny Inc lies a relentless pursuit of perfection. We are not just a brand; we are a collective of culinary innovators, health enthusiasts, and sustainability advocates dedicated to transforming how the world experiences nature's golden nectar.</p>
+                        <p>Our philosophy is deeply rooted in the belief that absolute purity should not come at the cost of modern convenience. By harmonizing ancient, organic sourcing techniques with cutting-edge, mess-free packaging, we have engineered a product that honors tradition while seamlessly fitting into your fast-paced lifestyle. Every single spoon we craft is a testament to our uncompromising commitment to ethical practices, unparalleled hygiene, and the fine art of organic infusions.</p>
+                    </div>
+                    <div style="display: flex; justify-content: center; margin-top: 40px;">
+                        <button class="cssbuttons-io-button ripple-link" id="openClientsBtn">
+                            View Our Trusted Partners
+                            <div class="icon">
+                                <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M0 0h24v24H0z" fill="none"></path>
+                                    <path d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z" fill="currentColor"></path>
+                                </svg>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- The Journey (Processing Timeline) -->
+            <section class="process-section">
+                <h3 class="section-sub text-center">— HOW IT'S MADE</h3>
+                <h2 class="section-title text-center smooth-glare-dark">The Journey of a Spoon</h2>
+                
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h4>1. Ethical Sourcing</h4>
+                            <p>We partner directly with organic apiaries, harvesting 100% pure, unadulterated honey. Our rigorous testing ensures every batch retains its natural enzymes and profound health benefits.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h4>2. Authentic Infusion</h4>
+                            <p>Premium ingredients like Kashmiri Saffron, Kehwa spices, and fresh Pan extracts are meticulously blended into the honey using proprietary, temperature-controlled methods to preserve their aroma and essence.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h4>3. Precision Crafting</h4>
+                            <p>The infused honey is carefully channeled into our food-grade, heat-resistant spoons. Advanced automated systems ensure exact portioning, delivering the perfect amount of sweetness every single time.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h4>4. Hygienic Sealing</h4>
+                            <p>Each spoon is hermetically sealed with a protective foil in a completely sterile environment, guaranteeing zero contamination, prolonged freshness, and an entirely mess-free experience for you.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Elevated "What Sets Us Apart" -->
+            <section class="features-section">
+                <div class="features-header">
+                    <h3 class="section-sub">— WHY CHOOSE US?</h3>
+                    <h2 class="section-title smooth-glare-dark">What Sets Us Apart</h2>
+                </div>
+                
+                <div class="features-grid">
+                    <div class="premium-feature-card">
+                        <div class="icon-wrapper">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                        </div>
+                        <h4>100% Pure & Natural</h4>
+                        <p>Sourced ethically from pristine apiaries, our honey contains zero artificial sugars or synthetic preservatives. It's raw nature, refined for your cup.</p>
+                    </div>
+                    
+                    <div class="premium-feature-card">
+                        <div class="icon-wrapper">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+                        </div>
+                        <h4>Mess-Free Convenience</h4>
+                        <p>Forget sticky jars and crystallizing bottles. Just peel the foil, stir directly into your hot beverage, and watch it dissolve flawlessly.</p>
+                    </div>
+                    
+                    <div class="premium-feature-card">
+                        <div class="icon-wrapper">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5z"/><line x1="16" y1="8" x2="2" y2="22"/><line x1="17.5" y1="15" x2="9" y2="6.5"/></svg>
+                        </div>
+                        <h4>Signature Infusions</h4>
+                        <p>We blend our rich honey with authentic, traditional ingredients like Saffron, Kehwa, and Pan to elevate your daily wellness routine.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- FAQ Section -->
+            <section class="faq-section">
+                <h2 class="section-title smooth-glare-purple">Frequently Asked Questions</h2>
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <div class="faq-question">What is Honey in Spoon? <span class="faq-icon">+</span></div>
+                        <div class="faq-answer"><p data-text="Honey in Spoon is a smart, pre-portioned spoon filled with 100% pure honey. It is designed to be stirred directly into your tea, coffee, or hot water, providing exact sweetness without the mess of traditional jars."></p></div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Are there any artificial preservatives? <span class="faq-icon">+</span></div>
+                        <div class="faq-answer"><p data-text="Absolutely not. We pride ourselves on offering unadulterated honey infused with natural ingredients. There are zero artificial colors, sugars, or preservatives in our spoons."></p></div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">How do I use it? <span class="faq-icon">+</span></div>
+                        <div class="faq-answer"><p data-text="It's incredibly simple. Just peel back the protective foil, dip the spoon into your hot beverage, and stir for a few seconds until the honey dissolves perfectly."></p></div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Where is the honey sourced from? <span class="faq-icon">+</span></div>
+                        <div class="faq-answer"><p data-text="We ethically source our premium honey from trusted, pristine apiaries. This ensures that every drop retains its natural enzymes, health benefits, and unparalleled taste."></p></div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="apple-footer">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <img src="logo.png" alt="Honey in Spoon Corporate Logo" class="footer-logo">
+                <p>Pure, Convenient & Perfectly Portioned for your daily delight.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Contact Info</h4>
+                <p>Honey in Spoon Inc.</p>
+                <p>Srinagar, Jammu and Kashmir, 190008</p>
+                <a href="mailto:hunyinc@gmail.com" class="highlight-text">hunyinc@gmail.com</a>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <a href="about.html">About Us</a>
+                <a href="products.html">Products</a>
+                <a href="contact.html">Contact Us</a>
+            </div>
+            <div class="footer-col">
+                <h4>Social</h4>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/huny.spoon?" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                    </a>
+                    <a href="https://www.facebook.com/profile.php?id=61594509522063&rdid=SZcBOONl0XxB41A4&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1HYG5X1o2E%2F" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.469h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.469h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026, Honey in Spoon. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Clients Modal (Accessible only via the button now) -->
+    <div id="clients-modal" class="modal-overlay">
+        <div class="modal-content" style="max-width: 900px;">
+            <button class="close-modal" id="closeClientsModal">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </button>
+            
+            <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+                <h3 class="section-sub text-yellow" style="margin-bottom: 10px;">— TRUSTED PARTNERS</h3>
+                <h2 class="modal-name smooth-glare-purple" style="font-size: 2.5rem; white-space: normal; letter-spacing: -1px;">Elevating Hospitality Experiences</h2>
+                <p style="color: var(--text-secondary); line-height: 1.6; font-size: 1.15rem; margin-bottom: 40px; margin-top: 15px;">We are proud to supply our signature honey spoons to some of the most prestigious hospitality and corporate brands. By partnering with Huny Inc, our clients ensure their guests experience unparalleled convenience, hygiene, and authentic flavor.</p>
+            </div>
+            
+            <div class="clients-wrapper" id="clients-container">
+                <p style="text-align: center; width: 100%; font-weight: 600;">Loading clients...</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Firebase & Logic -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js";
+        import { getFirestore, collection, getDocs, query, orderBy } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-firestore.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyDFkaY_Xgmmj_H5UQsmY0yk6F_W7iBiBPk",
+            authDomain: "honey-in-spoon-ba23e.firebaseapp.com",
+            projectId: "honey-in-spoon-ba23e",
+            storageBucket: "honey-in-spoon-ba23e.firebasestorage.app",
+            messagingSenderId: "636734187263",
+            appId: "1:636734187263:web:486fb9c0023b0bb4b94eca"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const rippleContainer = document.getElementById('click-ripple-container');
+            window.addEventListener('click', (e) => {
+                if (e.target.closest('.hamburger') || e.target.closest('.overlay-links a') || e.target.closest('button')) {
+                    if (!rippleContainer) return;
+                    const circle = document.createElement('div');
+                    circle.classList.add('click-ripple-circle');
+                    circle.style.left = `${e.clientX}px`;
+                    circle.style.top = `${e.clientY}px`;
+                    rippleContainer.appendChild(circle);
+                    setTimeout(() => circle.remove(), 800);
+                }
+            });
+
+            const contactBtn = document.getElementById('contactBtn');
+            const contactInfo = document.querySelector('.contact-info');
+            if(contactBtn) {
+                contactBtn.addEventListener('click', (e) => {
+                    if (window.innerWidth > 768) {
+                        e.preventDefault();
+                        if(contactInfo) contactInfo.classList.toggle('expanded');
+                    } else {
+                        // Open email client directly on mobile
+                        window.location.href = 'mailto:hunyinc@gmail.com';
+                    }
+                });
+            }
+
+            const hamburger = document.getElementById('hamburger');
+            const menuOverlay = document.getElementById('menu-overlay');
+            const overlayLinks = document.querySelectorAll('.overlay-links a');
+            
+            if(hamburger) {
+                hamburger.addEventListener('click', () => {
+                    hamburger.classList.toggle('active');
+                    menuOverlay.classList.toggle('active');
+                    const spans = hamburger.querySelectorAll('span');
+                    if (hamburger.classList.contains('active')) {
+                        spans.forEach(span => span.style.background = 'var(--honey-yellow)');
+                    } else {
+                        spans.forEach(span => span.style.background = 'var(--text-main)');
+                    }
+                });
+            }
+
+            overlayLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    if(hamburger) hamburger.classList.remove('active');
+                    if(menuOverlay) menuOverlay.classList.remove('active');
+                    if(hamburger) hamburger.querySelectorAll('span').forEach(span => span.style.background = 'var(--text-main)');
+                });
+            });
+
+            const liquidPill = document.querySelector('.liquid-pill');
+            let isScrolled = false;
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50 && !isScrolled) {
+                    if (liquidPill) liquidPill.classList.add('scrolled');
+                    isScrolled = true;
+                } else if (window.scrollY <= 50 && isScrolled) {
+                    if (liquidPill) liquidPill.classList.remove('scrolled');
+                    isScrolled = false;
+                }
+            }, { passive: true });
+
+            document.querySelectorAll('.faq-question').forEach(item => {
+                item.addEventListener('click', () => {
+                    const parent = item.parentElement;
+                    const isActive = parent.classList.contains('active');
+
+                    document.querySelectorAll('.faq-item').forEach(faq => {
+                        faq.classList.remove('active');
+                        faq.querySelector('.faq-icon').textContent = '+';
+                        const p = faq.querySelector('.faq-answer p');
+                        if(p) { p.textContent = ''; p.classList.remove('faq-cursor'); }
+                    });
+
+                    if (!isActive) {
+                        parent.classList.add('active');
+                        item.querySelector('.faq-icon').textContent = '-';
+                        const answerDiv = parent.querySelector('.faq-answer');
+                        const textEl = answerDiv.querySelector('p');
+                        const fullText = textEl.getAttribute('data-text');
+                        
+                        textEl.textContent = ''; 
+                        textEl.classList.add('faq-cursor');
+                        let i = 0;
+                        function typeWriter() {
+                            if (i < fullText.length) {
+                                textEl.textContent += fullText.substring(i, i + 2); 
+                                i += 2;
+                                requestAnimationFrame(typeWriter);
+                            } else {
+                                textEl.classList.remove('faq-cursor');
+                            }
+                        }
+                        setTimeout(() => requestAnimationFrame(typeWriter), 150);
+                    }
+                });
+            });
+
+            // Dynamic Clients Logic (Modal Only)
+            const clientsModal = document.getElementById('clients-modal');
+            const openClientsBtn = document.getElementById('openClientsBtn');
+            const closeClientsModalBtn = document.getElementById('closeClientsModal');
+            const modalClientsContainer = document.getElementById('clients-container');
+
+            const defaultClients = [
+                { id_string: "01", name: "The Azure Grand Resort & Spa", type: "Luxury Resort", order: 1 },
+                { id_string: "02", name: "Crescent Boutique Hotels", type: "Boutique Hotels", order: 2 },
+                { id_string: "03", name: "Oasis Premium Coffee Houses", type: "Premium Coffee Chain", order: 3 },
+                { id_string: "04", name: "Lumina Corporate Suites", type: "Corporate Stays", order: 4 },
+                { id_string: "05", name: "Vertex Fine Dining Syndicate", type: "Fine Dining Group", order: 5 },
+                { id_string: "06", name: "Aria Wellness & Health Retreats", type: "Health & Spa Retreats", order: 6 }
+            ];
+
+            function renderClients(clientsArray) {
+                if (modalClientsContainer) {
+                    modalClientsContainer.innerHTML = '';
+                    clientsArray.forEach(client => {
+                        modalClientsContainer.innerHTML += `
+                            <div class="client-card">
+                                <div class="client-num">${client.id_string || ''}</div>
+                                <div class="client-name-text">${client.name}</div>
+                            </div>
+                        `;
+                    });
+                }
+            }
+
+            async function fetchClientsFromFirestore() {
+                try {
+                    const q = query(collection(db, "clients"), orderBy("order", "asc"));
+                    const querySnapshot = await getDocs(q);
+                    if (!querySnapshot.empty) {
+                        let firebaseClients = [];
+                        querySnapshot.forEach((doc) => { firebaseClients.push(doc.data()); });
+                        renderClients(firebaseClients);
+                    } else {
+                        renderClients(defaultClients);
+                    }
+                } catch (error) {
+                    console.error("Error fetching clients:", error);
+                    renderClients(defaultClients);
+                }
+            }
+
+            // Fetch on load so the modal opens instantly with data
+            fetchClientsFromFirestore();
+
+            if(openClientsBtn && clientsModal) {
+                openClientsBtn.addEventListener('click', () => { clientsModal.classList.add('active'); });
+                closeClientsModalBtn.addEventListener('click', () => clientsModal.classList.remove('active'));
+                clientsModal.addEventListener('click', (e) => { if (e.target === clientsModal) clientsModal.classList.remove('active'); });
+            }
+        });
+    </script>
+</body>
+</html>

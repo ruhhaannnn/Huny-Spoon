@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Honey in Spoon</title>
+    
+    <!-- Core SEO Meta Tags -->
+    <meta name="description" content="Get in touch with Huny Inc. Connect for purchases, dealerships, retail partnerships, and corporate inquiries.">
+    <meta name="keywords" content="Honey in Spoon, pure honey, buy honey online, bulk honey orders, honey spoons, Srinagar honey, Huny Inc contact">
+    <meta name="author" content="Honey in Spoon Inc.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.yourwebsite.com/contact.html"> <!-- Replace with your actual domain -->
+
+    <!-- Open Graph / Facebook SEO -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.yourwebsite.com/contact.html">
+    <meta property="og:title" content="Contact Us | Honey in Spoon">
+    <meta property="og:description" content="Get in touch with Huny Inc. Connect for purchases, dealerships, retail partnerships, and corporate inquiries.">
+    <meta property="og:image" content="logo.png">
+
+    <!-- Twitter SEO -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Contact Us | Honey in Spoon">
+    <meta name="twitter:description" content="Get in touch with Huny Inc. Connect for purchases, dealerships, retail partnerships, and corporate inquiries.">
+    <meta name="twitter:image" content="logo.png">
+
+    <link rel="icon" type="image/png" href="favicon.png">
+    
+    <style>
+        :root {
+            /* Honey in Spoon Color Scheme */
+            --honey-yellow: #FFB300;
+            --honey-purple: #6A1B9A;
+            --bg-white: #ffffff;
+            --text-main: #1d1d1f;
+            --text-secondary: #515154;
+            --glass-bg: rgba(255, 255, 255, 0.45);
+            --glass-border: rgba(0, 0, 0, 0.05);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, sans-serif; }
+        body, html { width: 100%; height: 100%; background-color: var(--honey-purple); color: var(--text-main); overflow-x: hidden; scroll-behavior: smooth; }
+
+        .text-purple { color: var(--honey-purple); }
+        .text-yellow { color: var(--honey-yellow); }
+        .text-white { color: #ffffff !important; }
+
+        /* Globals & Navigation */
+        #click-ripple-container { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; pointer-events: none; z-index: 99999; overflow: hidden; }
+        .click-ripple-circle { position: absolute; border-radius: 50%; background: #ffffff; width: 10px; height: 10px; pointer-events: none; transform: translate(-50%, -50%) scale(0); animation: linearRipple 0.8s cubic-bezier(0.1, 0.8, 0.3, 1) forwards; will-change: transform, opacity; }
+        @keyframes linearRipple { 0% { transform: translate(-50%, -50%) scale(0); opacity: 0.9; } 100% { transform: translate(-50%, -50%) scale(65); opacity: 0; } }
+
+        #menu-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100vh; background: rgba(255, 255, 255, 0.96); backdrop-filter: blur(30px); display: flex; justify-content: center; align-items: center; pointer-events: none; z-index: 900; clip-path: circle(0% at calc(100% - 60px) 45px); transition: clip-path 0.6s cubic-bezier(0.77, 0, 0.175, 1); will-change: clip-path; }
+        #menu-overlay.active { clip-path: circle(150% at calc(100% - 60px) 45px); pointer-events: all; }
+        .overlay-links { display: flex; flex-direction: column; align-items: center; gap: 20px; width: 100%; max-width: 400px; }
+        .overlay-links a { display: flex; align-items: center; justify-content: center; width: 280px; height: 56px; border-radius: 50px; color: var(--text-main); text-decoration: none; font-size: 1.25rem; font-weight: 600; letter-spacing: -0.5px; position: relative; background: #ffffff; border: 1px solid rgba(0, 0, 0, 0.08); overflow: hidden; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05); transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); z-index: 1; transform: translateZ(0); }
+        .overlay-links a::before { content: ''; position: absolute; top: 50%; left: 50%; width: 500px; height: 500px; background: conic-gradient(from 0deg, transparent 60%, var(--honey-purple) 75%, var(--honey-yellow) 100%); transform: translate(-50%, -50%) rotate(0deg); animation: spinElectric 3.5s linear infinite; z-index: -2; opacity: 0.3; transition: opacity 0.4s; will-change: transform; }
+        .overlay-links a::after { content: ''; position: absolute; inset: 2px; background: #ffffff; border-radius: 50px; z-index: -1; transition: background 0.3s; }
+        .overlay-links a:hover { transform: scale(1.05) translateY(-2px); color: var(--honey-yellow); box-shadow: 0 0 30px rgba(255, 179, 0, 0.15), 0 0 15px rgba(106, 27, 154, 0.1); }
+        .overlay-links a:hover::before { opacity: 1; }
+        @keyframes spinElectric { 0% { transform: translate(-50%, -50%) rotate(0deg); } 100% { transform: translate(-50%, -50%) rotate(360deg); } }
+
+        .liquid-pill-wrapper { position: fixed; top: 20px; left: 0; width: 100%; display: flex; justify-content: center; z-index: 1000; pointer-events: none; }
+        .liquid-pill { display: flex; align-items: center; justify-content: space-between; background: var(--glass-bg); backdrop-filter: blur(40px) saturate(250%); border: 1px solid var(--glass-border); box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.9), 0 10px 30px rgba(0,0,0,0.08); border-radius: 100px; padding: 8px 16px 8px 15px; width: 90%; max-width: 1200px; transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); pointer-events: all; will-change: padding, border-radius, max-width, background; }
+        .liquid-pill.scrolled { padding: 10px 15px 10px 20px; background: rgba(255, 255, 255, 0.96); max-width: 100%; border-radius: 0px; border: none; border-bottom: 1px solid rgba(0, 0, 0, 0.05); box-shadow: 0 5px 15px rgba(0,0,0,0.03); }
+
+        /* INCREASED LOGO SIZE BY ~20% */
+        .header-logo { height: 51px; object-fit: contain; margin-left: 20px; }
+        .desktop-nav-links { display: flex; gap: 32px; align-items: center; justify-content: center; flex: 1; padding: 0 40px; }
+        .desktop-nav-links a { color: var(--text-main); text-decoration: none; font-size: 0.95rem; font-weight: 600; transition: color 0.3s; white-space: nowrap; }
+        .desktop-nav-links a:hover { color: var(--honey-purple); }
+
+        .header-controls { display: flex; align-items: center; gap: 20px; flex-shrink: 0; margin-right: 5px; }
+        .contact-slider { display: flex; align-items: center; background: white; border-radius: 50px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); padding: 4px; overflow: hidden; transform: translateZ(0); }
+        .contact-info { max-width: 0; opacity: 0; white-space: nowrap; overflow: hidden; transition: max-width 0.4s ease, opacity 0.3s ease, padding 0.4s ease; display: flex; align-items: center; font-size: 0.9rem; font-weight: 600; color: var(--text-main); will-change: max-width, opacity; }
+        .contact-info.expanded { max-width: 300px; opacity: 1; padding: 0 15px 0 10px; pointer-events: all; }
+        .contact-info .divider { color: #d2d2d7; margin: 0 10px; font-weight: 300; }
+        .pill-contact { background: var(--honey-purple); color: white; border: none; padding: 10px 24px; border-radius: 50px; font-weight: 600; cursor: pointer; transition: background 0.3s ease; position: relative; z-index: 5; }
+        .pill-contact:hover { background: var(--honey-yellow); color: #000; }
+
+        .hamburger { display: flex; flex-direction: column; gap: 6px; cursor: pointer; z-index: 2000; padding: 10px; }
+        .hamburger span { width: 28px; height: 2px; background: var(--text-main); border-radius: 2px; transition: transform 0.4s ease; }
+        .hamburger.active span:nth-child(1) { transform: translateY(8px) rotate(45deg); background: var(--honey-yellow); }
+        .hamburger.active span:nth-child(2) { transform: translateY(-8px) rotate(-45deg); background: var(--honey-yellow); }
+
+        .section-sub { color: var(--honey-yellow); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 20px; font-size: 0.9rem; font-weight: 700; display: block; text-align: center; }
+        .section-title { font-size: 2.5rem; font-weight: 800; margin-bottom: 20px; letter-spacing: -1px; position: relative; z-index: 5; text-align: center; }
+
+        @keyframes shineText { 0% { background-position: 200% center; } 100% { background-position: -200% center; } }
+        .glare-white { background: linear-gradient(to right, #ffffff 0%, #ffffff 40%, #ffe082 50%, #ffffff 60%, #ffffff 100%); background-size: 200% auto; -webkit-background-clip: text; -webkit-text-fill-color: transparent !important; animation: shineText 4s linear infinite forwards; text-shadow: none !important; }
+
+        /* FIXED PARALLAX HERO BACKGROUND */
+        .fixed-hero-bg {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100vh;
+            background: linear-gradient(135deg, var(--honey-purple) 0%, #4a0072 100%);
+            z-index: 1; display: flex; flex-direction: column; align-items: center;
+            padding: 180px 5% 0; text-align: center;
+        }
+        .fixed-hero-bg h1 { font-size: clamp(3rem, 5vw, 4.5rem); font-weight: 800; letter-spacing: -1.5px; margin-bottom: 20px; line-height: 1.1; color: #ffffff; text-shadow: 0 4px 15px rgba(0,0,0,0.15); }
+        .fixed-hero-bg p { font-size: 1.25rem; color: #ffffff; max-width: 700px; margin: 0 auto; line-height: 1.6; font-weight: 500; text-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+
+        /* THE SCROLLING LAYER */
+        .scrolling-layer { position: relative; z-index: 5; width: 100%; }
+        .hero-spacer { height: 60vh; width: 100%; pointer-events: none; }
+
+        .solid-white-stack {
+            position: relative; z-index: 10; width: 100%; padding-top: 20px; 
+        }
+        .stack-background-clipper {
+            position: absolute; inset: 0; background: #fafafa; border-radius: 60px 60px 0 0;
+            box-shadow: 0 -25px 60px rgba(0,0,0,0.25); overflow: hidden; z-index: 0;
+        }
+
+        /* Translucent Branded Glow Lines Inside the Stack */
+        .glow-line { position: absolute; width: 150%; height: 100px; filter: blur(45px); opacity: 0.35; transform-origin: left center; }
+        .line-1 { background: linear-gradient(90deg, transparent, var(--honey-purple), transparent); top: 5%; left: -10%; transform: rotate(25deg); }
+        .line-2 { background: linear-gradient(90deg, transparent, var(--honey-yellow), transparent); top: 35%; right: -20%; transform: rotate(-35deg); transform-origin: right center; opacity: 0.25;}
+        .line-3 { background: linear-gradient(90deg, transparent, var(--honey-purple), transparent); bottom: 15%; left: -10%; transform: rotate(-15deg); }
+
+        .stack-content { position: relative; z-index: 5; padding-top: 80px; }
+
+        /* TRUE BACKLIGHTS */
+        .card-backlight-wrapper { position: relative; border-radius: 24px; height: 100%; z-index: 1; }
+        .card-backlight-wrapper::before {
+            content: ''; position: absolute; inset: 0; border-radius: inherit; z-index: -1; 
+            filter: blur(25px); opacity: 0.15; transform: scale(1.02) translateZ(0); 
+            transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1), transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            pointer-events: none; will-change: transform, opacity; backface-visibility: hidden;
+        }
+        .card-backlight-wrapper.glow-purple::before { background: var(--honey-purple); }
+        .card-backlight-wrapper.glow-yellow::before { background: var(--honey-yellow); }
+        .card-backlight-wrapper:hover::before { opacity: 0.6; transform: scale(1.05) translateZ(0); }
+
+        .solid-card {
+            background: #ffffff; border-radius: inherit; height: 100%; border: 1px solid rgba(0,0,0,0.05);
+            position: relative; z-index: 2; transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            will-change: transform, box-shadow; backface-visibility: hidden;
+        }
+        .card-backlight-wrapper:hover .solid-card { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0,0,0,0.05); }
+
+        /* Contact Info Cards Layout */
+        .contact-info-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; max-width: 900px; margin: 0 auto 50px; padding: 0 5%; }
+        .info-card-content { padding: 40px 30px; text-align: center; display: flex; flex-direction: column; align-items: center; }
+        .icon-circle { width: 70px; height: 70px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 25px; transition: all 0.3s; }
+        .icon-purple { background: rgba(106, 27, 154, 0.1); color: var(--honey-purple); }
+        .icon-yellow { background: rgba(255, 179, 0, 0.15); color: var(--honey-yellow); }
+        .icon-dark { background: rgba(0,0,0,0.05); color: var(--text-main); }
+        .info-card-content h4 { font-size: 1.35rem; font-weight: 700; margin-bottom: 10px; }
+        .info-card-content p { font-size: 1.05rem; color: var(--text-secondary); line-height: 1.6; }
+        .info-card-content a { color: var(--text-main); text-decoration: none; font-weight: 600; transition: color 0.3s; }
+        .info-card-content a:hover { color: var(--honey-purple); }
+        
+        .card-backlight-wrapper:hover .icon-purple { background: var(--honey-purple); color: #fff; transform: scale(1.1); }
+        .card-backlight-wrapper:hover .icon-yellow { background: var(--honey-yellow); color: #000; transform: scale(1.1); }
+
+        /* Standalone Social Bar */
+        .standalone-socials { text-align: center; margin-bottom: 80px; padding: 0 5%; }
+        .standalone-socials p { font-size: 1.15rem; font-weight: 700; color: var(--text-main); margin-bottom: 20px; }
+        .social-icons-large { display: flex; justify-content: center; gap: 20px; }
+        .social-icons-large a { 
+            display: flex; align-items: center; justify-content: center; 
+            width: 60px; height: 60px; border-radius: 50%; 
+            background: #ffffff; color: var(--honey-purple); 
+            border: 1px solid rgba(0,0,0,0.05);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+            transition: all 0.3s ease; 
+        }
+        .social-icons-large a:hover { 
+            background: var(--honey-purple); color: var(--honey-yellow); 
+            transform: translateY(-5px); box-shadow: 0 10px 25px rgba(106, 27, 154, 0.2); 
+            border-color: transparent;
+        }
+
+        /* FUTURISTIC FORM SECTION */
+        .form-section { padding: 0 5% 60px; display: flex; justify-content: center; }
+        .form-container {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(20px);
+            border-radius: 40px;
+            padding: 60px 50px;
+            width: 100%;
+            max-width: 800px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.05);
+            border: 1px solid rgba(255,255,255,0.8);
+            position: relative;
+        }
+
+        .form-group { margin-bottom: 25px; position: relative; }
+        .form-label { display: block; font-size: 0.95rem; font-weight: 700; margin-bottom: 8px; color: var(--text-main); }
+        
+        .form-control {
+            width: 100%;
+            padding: 16px 20px;
+            font-size: 1.05rem;
+            color: var(--text-main);
+            background: rgba(0,0,0,0.02);
+            border: 2px solid rgba(0,0,0,0.05);
+            border-radius: 16px;
+            transition: all 0.3s ease;
+            outline: none;
+        }
+        .form-control::placeholder { color: #a1a1a6; }
+        .form-control:focus {
+            background: #ffffff;
+            border-color: var(--honey-purple);
+            box-shadow: 0 0 0 4px rgba(106, 27, 154, 0.1);
+        }
+        textarea.form-control { resize: vertical; min-height: 150px; }
+
+        /* CUSTOM SCROLLER DROPDOWN */
+        .custom-select-wrapper { position: relative; user-select: none; }
+        .custom-select-trigger {
+            display: flex; justify-content: space-between; align-items: center;
+            cursor: pointer;
+        }
+        .custom-options {
+            position: absolute; display: block; top: 100%; left: 0; right: 0;
+            background: rgba(255,255,255,0.98); backdrop-filter: blur(20px);
+            border: 1px solid rgba(0,0,0,0.08); border-radius: 16px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+            margin-top: 8px; z-index: 100;
+            opacity: 0; visibility: hidden; transform: translateY(-10px);
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            overflow: hidden;
+        }
+        .custom-select-wrapper.open .custom-options { opacity: 1; visibility: visible; transform: translateY(0); }
+        .custom-option {
+            padding: 15px 20px; font-size: 1.05rem; font-weight: 500; cursor: pointer;
+            transition: background 0.2s, color 0.2s;
+            border-bottom: 1px solid rgba(0,0,0,0.03);
+        }
+        .custom-option:last-child { border-bottom: none; }
+        .custom-option:hover, .custom-option.selected { background: var(--honey-purple); color: #ffffff; }
+
+        .arrow-icon { transition: transform 0.3s ease; width: 20px; height: 20px; stroke: var(--text-secondary); }
+        .custom-select-wrapper.open .arrow-icon { transform: rotate(180deg); }
+
+        .submit-btn {
+            width: 100%;
+            background: linear-gradient(135deg, var(--honey-purple) 0%, #4a0072 100%);
+            color: #ffffff;
+            border: none;
+            padding: 18px 30px;
+            font-size: 1.15rem;
+            font-weight: 700;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 10px 20px rgba(106, 27, 154, 0.2);
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            margin-top: 10px;
+        }
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(106, 27, 154, 0.3);
+            background: linear-gradient(135deg, var(--honey-yellow) 0%, #e6a200 100%);
+            color: #000;
+        }
+
+        /* APPLE-STYLE MAP SECTION */
+        .map-section { padding: 0 5% 100px; }
+        .map-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            border-radius: 40px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.08);
+            border: 1px solid rgba(0,0,0,0.05);
+            background: #fff;
+            transform: translateZ(0);
+        }
+        .map-container iframe {
+            width: 100%;
+            height: 500px;
+            display: block;
+            border: none;
+        }
+
+        /* Footer */
+        .apple-footer { padding: 80px 5% 40px; background: #ffffff; border-top: 1px solid rgba(0,0,0,0.05); position: relative; z-index: 10; }
+        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; max-width: 1200px; margin: 0 auto 60px; }
+        
+        /* INCREASED LOGO SIZE BY ~20% */
+        .footer-logo { height: 48px; margin-bottom: 20px; margin-left: 0; }
+        
+        .footer-col h4 { margin-bottom: 20px; color: var(--text-main); font-size: 1.1rem; }
+        .footer-col p, .footer-col a { color: var(--text-secondary); margin-bottom: 12px; text-decoration: none; display: block; line-height: 1.5; font-size: 0.95rem; transition: color 0.2s; }
+        .footer-col a:hover { color: var(--honey-purple); }
+        .highlight-text { color: var(--honey-purple) !important; font-size: 1.1rem; font-weight: 600; margin-top: 15px; }
+        .highlight-text:hover { color: var(--honey-yellow) !important; }
+        .social-links { display: flex; gap: 15px; align-items: center; }
+        .social-links a { color: var(--text-secondary); transition: color 0.2s ease; display: flex; }
+        .social-links a:hover { color: var(--honey-purple); }
+        .footer-bottom { text-align: center; padding-top: 20px; border-top: 1px solid #e5e5ea; color: var(--text-secondary); font-size: 0.85rem; }
+
+        @media (min-width: 901px) { .hamburger { display: none !important; } }
+        
+        /* Mobile Adjustments */
+        @media (max-width: 900px) { .desktop-nav-links { display: none; } }
+        @media (max-width: 768px) {
+            html { font-size: 93%; }
+            .liquid-pill { width: 95%; padding: 8px 15px; }
+            .header-logo { margin-left: 5px; }
+            .contact-info { display: none !important; }
+            .contact-slider { padding: 0; background: transparent; box-shadow: none; pointer-events: all; overflow: visible; }
+            .pill-contact { padding: 8px 18px; font-size: 0.9rem; margin-right: 5px; }
+            .header-controls { gap: 8px; }
+            
+            .fixed-hero-bg { padding-top: 120px; }
+            .fixed-hero-bg h1 { font-size: 2.3rem !important; margin-bottom: 15px; }
+            
+            .hero-spacer { height: 45vh; }
+            .stack-background-clipper { border-radius: 40px 40px 0 0; }
+            .stack-content { padding-top: 50px; }
+            .section-title { font-size: 2rem; }
+            
+            .contact-info-grid { padding: 0 20px; gap: 20px; margin-bottom: 50px; grid-template-columns: 1fr; }
+            
+            .standalone-socials { margin-bottom: 50px; }
+
+            .form-section { padding: 0 20px 60px; }
+            .form-container { padding: 40px 25px; border-radius: 30px; }
+            
+            .map-section { padding: 0 20px 80px; }
+            .map-container { border-radius: 30px; }
+            .map-container iframe { height: 350px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="click-ripple-container"></div>
+
+    <div id="menu-overlay">
+        <nav class="overlay-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="products.html">Products</a>
+            <a href="contact.html" style="color: var(--honey-yellow) !important;">Contact Us</a>
+        </nav>
+    </div>
+
+    <header class="liquid-pill-wrapper">
+        <nav class="liquid-pill">
+            <a href="index.html" style="display: flex; align-items: center; text-decoration: none;">
+                <img src="logo.png" alt="Honey in Spoon Logo" class="header-logo">
+            </a>
+            
+            <div class="desktop-nav-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="products.html">Products</a>
+                <a href="contact.html" style="color: var(--honey-purple);">Contact Us</a>
+            </div>
+
+            <div class="header-controls">
+                <div class="contact-slider" id="contactSlider">
+                    <div class="contact-info">
+                        <span>hunyinc@gmail.com</span>
+                    </div>
+                    <button class="pill-contact" id="contactBtn">Contact</button>
+                </div>
+                
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="fixed-hero-bg">
+        <h1 class="glare-white">Let's Connect.</h1>
+        <p>Whether you're looking to place a bulk order, partner with us as a retailer, or simply say hello, we're here to help.</p>
+    </div>
+
+    <div class="scrolling-layer">
+        
+        <div class="hero-spacer"></div>
+
+        <div class="solid-white-stack">
+            
+            <div class="stack-background-clipper">
+                <div class="decorative-lines">
+                    <div class="glow-line line-1"></div>
+                    <div class="glow-line line-2"></div>
+                    <div class="glow-line line-3"></div>
+                </div>
+            </div>
+
+            <div class="stack-content">
+
+                <!-- MOVED TO THE TOP: FUTURISTIC FORM SECTION -->
+                <section class="form-section">
+                    <div class="form-container">
+                        <span class="section-sub">— SEND A MESSAGE</span>
+                        <h2 class="section-title">How can we help?</h2>
+
+                        <form action="https://formspree.io/f/xvkgqlyo" method="POST">
+                            
+                            <div class="form-group">
+                                <label class="form-label" for="name">Full Name</label>
+                                <input type="text" id="name" name="name" class="form-control" placeholder="John Doe" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label" for="email">Email Address</label>
+                                <input type="email" id="email" name="email" class="form-control" placeholder="john@example.com" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label">Request Type</label>
+                                <div class="custom-select-wrapper" id="customSelect">
+                                    <div class="form-control custom-select-trigger" id="selectTrigger">
+                                        <span id="selectLabel">Select your request type...</span>
+                                        <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                                    </div>
+                                    <div class="custom-options">
+                                        <div class="custom-option" data-value="I want to purchase Honey Spoons">I want to purchase Honey Spoons</div>
+                                      
+                                        <div class="custom-option" data-value="I have a corporate/bulk inquiry">I have a corporate/bulk inquiry</div>
+                                        <div class="custom-option" data-value="General Inquiry">General Inquiry</div>
+                                    </div>
+                                </div>
+                                <input type="hidden" name="Request Type" id="requestTypeInput" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label" for="message">Your Message</label>
+                                <textarea id="message" name="message" class="form-control" placeholder="Tell us more about your requirements..." required></textarea>
+                            </div>
+
+                            <button type="submit" class="submit-btn">Send Message</button>
+                        </form>
+                    </div>
+                </section>
+
+                <div class="contact-info-grid">
+                    <!-- Headquarters Box -->
+                    <div class="card-backlight-wrapper glow-yellow">
+                        <div class="solid-card info-card-content">
+                            <div class="icon-circle icon-yellow">
+                                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                            </div>
+                            <h4>Headquarters</h4>
+                            <p>Honey in Spoon Inc.,<br>Srinagar, Jammu and Kashmir,<br>190008</p>
+                        </div>
+                    </div>
+
+                    <!-- Email Box -->
+                    <div class="card-backlight-wrapper glow-purple">
+                        <div class="solid-card info-card-content">
+                            <div class="icon-circle icon-purple">
+                                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                            </div>
+                            <h4>Email Us</h4>
+                            <p>For general inquiries and support, drop us an email.</p>
+                            <a href="mailto:hunyinc@gmail.com" style="margin-top: 10px;">hunyinc@gmail.com</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Standalone Elegant Social Bar -->
+                <div class="standalone-socials">
+                    <p>Connect with us on our socials</p>
+                    <div class="social-icons-large">
+                        <a href="https://www.instagram.com/huny.spoon?" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                        </a>
+                        <a href="https://www.facebook.com/profile.php?id=61594509522063&rdid=SZcBOONl0XxB41A4&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1HYG5X1o2E%2F" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.469h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.469h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <section class="map-section">
+                    <div class="map-container">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d105658.11308365288!2d74.7214981165158!3d34.07474438312019!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38e18f5aaaaaaaab%3A0x23a31c50085a5360!2sSrinagar%2C%20Jammu%20and%20Kashmir!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" width="100%" height="500" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </section>
+
+            </div> 
+        </div> 
+    </div>
+
+    <footer class="apple-footer">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <img src="logo.png" alt="Honey in Spoon Corporate Logo" class="footer-logo">
+                <p>Pure, Convenient & Perfectly Portioned for your daily delight.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Contact Info</h4>
+                <p>Honey in Spoon Inc.</p>
+                <p>Srinagar, Jammu and Kashmir, 190008</p>
+                <a href="mailto:hunyinc@gmail.com" class="highlight-text">hunyinc@gmail.com</a>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <a href="about.html">About Us</a>
+                <a href="products.html">Products</a>
+                <a href="contact.html">Contact Us</a>
+            </div>
+            <div class="footer-col">
+                <h4>Social</h4>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/huny.spoon?" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                    </a>
+                    <a href="https://www.facebook.com/profile.php?id=61594509522063&rdid=SZcBOONl0XxB41A4&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1HYG5X1o2E%2F" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.469h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.469h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+          <p></p>
+            <p>© 2026, Honey in Spoon. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            // --- Custom Scroller Dropdown Logic ---
+            const customSelect = document.getElementById('customSelect');
+            const selectTrigger = document.getElementById('selectTrigger');
+            const selectLabel = document.getElementById('selectLabel');
+            const options = document.querySelectorAll('.custom-option');
+            const hiddenInput = document.getElementById('requestTypeInput');
+
+            selectTrigger.addEventListener('click', (e) => {
+                e.stopPropagation();
+                customSelect.classList.toggle('open');
+            });
+
+            options.forEach(option => {
+                option.addEventListener('click', function() {
+                    const value = this.getAttribute('data-value');
+                    selectLabel.textContent = value;
+                    selectLabel.style.color = 'var(--text-main)';
+                    hiddenInput.value = value;
+                    
+                    options.forEach(opt => opt.classList.remove('selected'));
+                    this.classList.add('selected');
+                    
+                    customSelect.classList.remove('open');
+                });
+            });
+
+            document.addEventListener('click', (e) => {
+                if (!customSelect.contains(e.target)) {
+                    customSelect.classList.remove('open');
+                }
+            });
+
+            // --- Core UI Logic ---
+            const rippleContainer = document.getElementById('click-ripple-container');
+            window.addEventListener('click', (e) => {
+                if (e.target.closest('.hamburger') || e.target.closest('.overlay-links a') || e.target.closest('button')) {
+                    if (!rippleContainer) return;
+                    const circle = document.createElement('div');
+                    circle.classList.add('click-ripple-circle');
+                    circle.style.left = `${e.clientX}px`;
+                    circle.style.top = `${e.clientY}px`;
+                    rippleContainer.appendChild(circle);
+                    setTimeout(() => circle.remove(), 800);
+                }
+            });
+
+            const contactBtn = document.getElementById('contactBtn');
+            const contactInfo = document.querySelector('.contact-info');
+            if(contactBtn) {
+                contactBtn.addEventListener('click', (e) => {
+                    if (window.innerWidth > 768) {
+                        e.preventDefault();
+                        if(contactInfo) contactInfo.classList.toggle('expanded');
+                    } else {
+                        // Open email client on mobile instead of phone dialer
+                        window.location.href = 'mailto:hunyinc@gmail.com';
+                    }
+                });
+            }
+
+            const hamburger = document.getElementById('hamburger');
+            const menuOverlay = document.getElementById('menu-overlay');
+            const overlayLinks = document.querySelectorAll('.overlay-links a');
+            
+            if(hamburger) {
+                hamburger.addEventListener('click', () => {
+                    hamburger.classList.toggle('active');
+                    menuOverlay.classList.toggle('active');
+                    const spans = hamburger.querySelectorAll('span');
+                    if (hamburger.classList.contains('active')) {
+                        spans.forEach(span => span.style.background = 'var(--honey-yellow)');
+                    } else {
+                        spans.forEach(span => span.style.background = 'var(--text-main)');
+                    }
+                });
+            }
+
+            overlayLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    if(hamburger) hamburger.classList.remove('active');
+                    if(menuOverlay) menuOverlay.classList.remove('active');
+                    if(hamburger) hamburger.querySelectorAll('span').forEach(span => span.style.background = 'var(--text-main)');
+                });
+            });
+
+            const liquidPill = document.querySelector('.liquid-pill');
+            let isScrolled = false;
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50 && !isScrolled) {
+                    if (liquidPill) liquidPill.classList.add('scrolled');
+                    isScrolled = true;
+                } else if (window.scrollY <= 50 && isScrolled) {
+                    if (liquidPill) liquidPill.classList.remove('scrolled');
+                    isScrolled = false;
+                }
+            }, { passive: true });
+        });
+    </script>
+</body>
+</html>
